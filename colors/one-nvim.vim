@@ -7,14 +7,14 @@ if vim.o.background == "dark" then
     mono_2        = {"#828997", 102, "mono_2"}
     mono_3        = {"#5c6370",  59, "mono_3"}
     mono_4        = {"#4b5263", 240, "mono_4"}
-    hue_1         = {"#56b6c2", 247, "hue_1"}
-    hue_2         = {"#61afef",  75, "hue_2"}
-    hue_3         = {"#c678dd", 176, "hue_3"}
-    hue_4         = {"#98c379", 114, "hue_4"}
-    hue_5         = {"#e06c75", 168, "hue_5"}
-    hue_5_2       = {"#be5046", 131, "hue_5_2"}
-    hue_6         = {"#d19a66", 247, "hue_6"}
-    hue_6_2       = {"#e5c07b", 180, "hue_6_2"}
+    hue_1         = {"#56b6c2", 247, "hue_1"} -- cyan
+    hue_2         = {"#61afef",  75, "hue_2"} -- blue
+    hue_3         = {"#c678dd", 176, "hue_3"} -- purple
+    hue_4         = {"#98c379", 114, "hue_4"} -- green
+    hue_5         = {"#e06c75", 168, "hue_5"} -- red1
+    hue_5_2       = {"#be5046", 131, "hue_5_2"} -- red2
+    hue_6         = {"#d19a66", 247, "hue_6"} -- orange1
+    hue_6_2       = {"#e5c07b", 180, "hue_6_2"} -- orange2
     syntax_bg     = {"#24282c",  17, "syntax_bg"}
     syntax_gutter = {"#636d83", 243, "syntax_gutter"}
     syntax_cursor = {"#2c323c",  23, "syntax_cursor"}
@@ -85,7 +85,7 @@ local highlight_groups = {
      VertSplit    = { fg = syntax_cursor },
      Folded       = { fg = syntax_fg, bg = syntax_bg },
      FoldColumn   = { fg = mono_3, bg = syntax_cursor },
-     IncSearch    = { fg = hue_6 },
+     IncSearch    = { fg = syntax_bg, bg = hue_2 },
      LineNr       = { fg = mono_4 },
      CursorLineNr = { fg = syntax_fg, bg = syntax_cursor },
      MatchParen   = { fg = hue_5, bg = syntax_cursor, style = 'underline,bold' },
@@ -161,8 +161,8 @@ local highlight_groups = {
      Debug          = { fg = none},
      Underlined     = { fg = none, style = 'underline' },
      Ignore         = { fg = none},
-     Error          = { fg = hue_5, bg = mono_3,   style = 'bold'},
-     Todo           = { fg = hue_3, bg = mono_3 },
+     Error          = { fg = hue_5, bg = syntax_bg, style = 'bold'},
+     Todo           = { fg = hue_3, bg = syntax_bg },
 
 -----------------------
 -- Diff Highlighting --
@@ -547,10 +547,10 @@ local highlight_groups = {
      NERDTreeFile = { fg = mono_1 },
 
 -- Coc.nvim
-CocFloating = { bg = none },
+    CocFloating = { bg = none },
 
 
-NormalFloating = { bg = none },
+    NormalFloating = { bg = none },
 -----------------------------
 -- TreeSitter Highlighting --
 -----------------------------
@@ -604,6 +604,19 @@ NormalFloating = { bg = none },
      TSURI                = { fg = hue_6_2 },
      TSVariable           = { fg = mono_1 },
      TSVariableBuiltin    = { fg = hue_6_2 },
+
+    -- Telescope
+    -- TelescopeSelection      = {fg="#D79921", style='bold'}, -- selected item
+    TelescopeSelection      = {fg=hue_2, style='bold'}, -- selected item
+    TelescopeSelectionCaret = {fg=hue_3}, -- selection caret
+    -- TelescopeMultiSelection = {fg="#928374"}, -- multisections
+    -- TelescopeNormal         = {bg="#00000"}, -- floating windows created by telescope.
+    TelescopeBorder         = {fg=mono_1},
+    TelescopePromptBorder   = {fg=mono_1},
+    TelescopeResultsBorder  = {fg=mono_1},
+    TelescopePreviewBorder  = {fg=mono_1},
+    TelescopeMatching       = {fg=hue_6},
+    TelescopePromptPrefix   = {fg=hue_5},
 
 }
 
