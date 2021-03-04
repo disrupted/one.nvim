@@ -23,6 +23,11 @@ if vim.o.background == "dark" then
     special_grey  = {"#3b4048",  238, "special_grey"}
     visual_grey   = {"#3e4452",  59, "visual_grey"}
     pmenu         = {"#333841",  59, "pmenu"}
+    term_black    = {"#282c34",  17, "term_black"}
+    term_blue     = {"#61afef",  75, "term_blue"}
+    term_cyan     = {"#56b6c2", 247, "term_cyan"}
+    term_white    = {"#dcdfe4", 188, "term_white"}
+    term_8        = {"#5d677a", 242, "term_8"}
 else
     -- Light Colors
     mono_1        = {"#494b53",  59, "mono_1"}
@@ -45,18 +50,15 @@ else
     special_grey  = {"#d3d3d3", 252, "special_grey"}
     visual_grey   = {"#d0d0d0", 252, "visual_grey"}
     pmenu         = {"#dfdfdf", 254, "pmenu"}
+    term_black    = {"#383a42", 237, "term_black"}
+    term_blue     = {"#0184bc", 31, "term_blue"}
+    term_cyan     = {"#0997b3", 243, "term_cyan"}
+    term_white    = {"#fafafa", 231, "term_white"}
+    term_8        = {"#4f525e", 240, "term_8"}
 end
 
 -- Common 
 local pink = {"#d291e4", 251, "pink"}
-local tc1  = {"#353a44",  59, "tc1"}
-local tc2  = {"#e88388", 174, "tc2"}
-local tc3  = {"#a7cc8c", 248, "tc3"}
-local tc4  = {"#ebca8d", 250, "tc4"}
-local tc5  = {"#72bef2", 249, "tc5"}
-local tc6  = {"#d291e4", 251, "tc6"}
-local tc7  = {"#65c2cd", 248, "tc7"}
-local tc8  = {"#e3e5e9", 254, "tc8"}
 
 --[[ DO NOT EDIT `BG` NOR `FG`. ]]
 local BG = "bg"
@@ -531,28 +533,92 @@ local highlight_groups = {
      manTitle  = 'String',
      manFooter = { fg = mono_3 },
 
--------------------------
--- Plugin Highlighting --
--------------------------
+-----------------------------
+--     LSP Highlighting    --
+-----------------------------
 
--- ALE (Asynchronous Lint Engine)
-     ALEWarningSign = { fg = hue_6_2 },
-     ALEErrorSign   = { fg = hue_5 },
-     LspDiagnosticsWarning = { fg = hue_6_2 },
-     LspDiagnosticsError   = { fg = hue_5 },
-     LspDiagnosticsVirtualTextWarning = { fg = hue_6_2 },
-     LspDiagnosticsVirtualTextError   = { fg = hue_5 },
+    LspDiagnosticsDefaultError           = { fg = hue_5 },
+    LspDiagnosticsDefaultWarning         = { fg = hue_6_2 },
+    LspDiagnosticsDefaultInformation     = { fg = hue_1 },
+    LspDiagnosticsDefaultHint            = { fg = hue_4 },
+    LspDiagnosticsVirtualTextError       = { fg = hue_5 },
+    LspDiagnosticsVirtualTextWarning     = { fg = hue_6_2 },
+    LspDiagnosticsVirtualTextInformation = { fg = hue_1 },
+    LspDiagnosticsVirtualTextHint        = { fg = hue_4 },
+    -- LspDiagnosticsUnderlineError         = { fg = hue_5 , style = 'underline' },
+    -- LspDiagnosticsUnderlineWarning       = { fg = hue_6_2 , style = 'underline' },
+    -- LspDiagnosticsUnderlineInformation   = { fg = hue_1 , style = 'underline' },
+    -- LspDiagnosticsUnderlineHint          = { fg = hue_4 , style = 'underline' },
+    LspDiagnosticsFloatingError          = { fg = hue_5 , bg = pmenu },
+    LspDiagnosticsFloatingWarning        = { fg = hue_6_2 , bg = pmenu },
+    LspDiagnosticsFloatingInformation    = { fg = hue_1 , bg = pmenu },
+    LspDiagnosticsFloatingHint           = { fg = hue_4 , bg = pmenu },
+    LspDiagnosticsSignError              = { fg = hue_5 },
+    LspDiagnosticsSignWarning            = { fg = hue_6_2 },
+    LspDiagnosticsSignInformation        = { fg = hue_1 },
+    LspDiagnosticsSignHint               = { fg = hue_4 },
+    LspReferenceText                     = { style = 'reverse' },
+    LspReferenceRead                     = { style = 'reverse' },
+    LspReferenceWrite                    = { fg = hue_6_2, style = 'reverse' },
 
--- Neovim NERDTree Background fix
-     NERDTreeFile = { fg = mono_1 },
-
--- Coc.nvim
-    CocFloating = { bg = none },
-
-
-    NormalFloating = { bg = none },
 -----------------------------
 -- TreeSitter Highlighting --
+-- STANDARD                --
+-----------------------------
+
+     -- TSAnnotation         = 'PreProc',
+     -- TSAttribute          = 'PreProc',
+     -- TSBoolean            = 'Boolean',
+     -- TSCharacter          = 'Character',
+     -- TSComment            = 'Comment',
+     -- TSConditional        = 'Conditional',
+     -- TSConstant           = 'Constant',
+     -- TSConstBuiltin       = 'Special',
+     -- TSConstMacro         = 'Define',
+     -- TSConstructor        = 'Special',
+     -- TSEmphasis           = 'Italic',
+     -- TSError              = 'Error',
+     -- TSException          = 'Exception',
+     -- TSField              = 'Identifier',
+     -- TSFloat              = 'Float',
+     -- TSFunction           = 'Function',
+     -- TSFuncBuiltin        = 'Special',
+     -- TSFuncMacro          = 'Macro',
+     -- TSInclude            = 'Include',
+     -- TSKeyword            = 'Keyword',
+     -- TSKeywordFunction    = 'Keyword',
+     -- TSKeywordOperator    = 'Operator',
+     -- TSLabel              = 'Label',
+     -- TSLiteral            = 'String',
+     -- TSMethod             = 'Function',
+     -- TSNamespace          = 'Include',
+     -- TSNumber             = 'Number',
+     -- TSOperator           = 'Operator',
+     -- TSParameter          = 'Identifier',
+     -- TSParameterReference = 'Identifier',
+     -- TSProperty           = 'Identifier',
+     -- TSPunctBracket       = 'Delimiter',
+     -- TSPunctDelimiter     = 'Delimiter',
+     -- TSPunctSpecial       = 'Delimiter',
+     -- TSRepeat             = 'Repeat',
+     -- TSString             = 'String',
+     -- TSStringEscape       = 'SpecialChar',
+     -- TSStringRegex        = 'String',
+     -- TSStrong             = 'bold',
+     -- TSTag                = 'Label',
+     -- TSTagDelimiter       = 'Label',
+     -- -- TSText               = { fg = hue_6_2 },
+     -- TSTitle              = 'Title',
+     -- TSType               = 'Type',
+     -- TSTypeBuiltin        = 'Type',
+     -- TSUnderline          = 'Underlined',
+     -- TSURI                = 'Underlined',
+     -- TSVariableBuiltin    = 'Special',
+
+
+-----------------------------
+-- TreeSitter Highlighting --
+-- CUSTOM disrupted        --
 -----------------------------
 
      TSAnnotation         = { fg = hue_6_2 },
@@ -588,7 +654,7 @@ local highlight_groups = {
      TSPunctBracket       = { fg = hue_2 },
      TSPunctDelimiter     = { fg = syntax_accent },
      TSPunctSpecial       = { fg = mono_1 },
-     TSRepeat             = { fg = pink},
+     TSRepeat             = { fg = pink },
      TSString             = { fg = hue_4 },
      TSStringEscape       = { fg = mono_1 },
      TSStringRegex        = { fg = hue_4 },
@@ -605,7 +671,9 @@ local highlight_groups = {
      TSVariable           = { fg = mono_1 },
      TSVariableBuiltin    = { fg = hue_6_2 },
 
-    -- Telescope
+-----------------------------
+-- Telescope --
+-----------------------------
     -- TelescopeSelection      = {fg="#D79921", style='bold'}, -- selected item
     TelescopeSelection      = {fg=hue_2, style='bold'}, -- selected item
     TelescopeSelectionCaret = {fg=hue_3}, -- selection caret
@@ -621,22 +689,22 @@ local highlight_groups = {
 }
 
 local terminal_ansi_colors = {
-    [1] = tc1,
-    [2] = tc2,
-    [3] = tc3,
-    [4] = tc4,
-    [5] = tc5,
-    [6] = tc6,
-    [7] = tc7,
-    [8] = tc8,
-    [9] = tc1,
-    [10] = tc2,
-    [11] = tc3,
-    [12] = tc4,
-    [13] = tc5,
-    [14] = tc6,
-    [15] = tc7,
-    [16] = tc8
+    [0]  = term_black,
+    [1]  = hue_5,
+    [2]  = hue_4,
+    [3]  = hue_6_2,
+    [4]  = term_blue,
+    [5]  = hue_3,
+    [6]  = term_cyan,
+    [7]  = term_white,
+    [8]  = term_8,
+    [9]  = hue_5,
+    [10] = hue_4,
+    [11] = hue_6_2,
+    [12] = term_blue,
+    [13] = hue_3,
+    [14] = term_cyan,
+    [15] = term_white
 }
 
 require(vim.g.colors_name)(highlight_group_normal, highlight_groups, terminal_ansi_colors)
