@@ -59,6 +59,7 @@ end
 
 -- Common 
 local pink = {"#d291e4", 251, "pink"}
+local yellow = {"#ffcb43", 1, "yellow"}
 
 --[[ DO NOT EDIT `BG` NOR `FG`. ]]
 local BG = "bg"
@@ -670,6 +671,7 @@ local highlight_groups = {
     TSURI                = { fg = hue_6_2 },
     TSVariable           = { fg = mono_1 },
     TSVariableBuiltin    = { fg = hue_6_2 },
+    LightBulb            = { fg = yellow },
 
 -----------------------------
 -- Telescope --
