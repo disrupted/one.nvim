@@ -673,20 +673,30 @@ local highlight_groups = {
     TSVariableBuiltin    = { fg = hue_6_2 },
     LightBulb            = { fg = yellow },
 
------------------------------
+---------------
 -- Telescope --
------------------------------
-    -- TelescopeSelection      = { fg="#D79921", style='bold' }, -- selected item
-    TelescopeSelection      = { fg=hue_2, style='bold' }, -- selected item
-    TelescopeSelectionCaret = { fg=hue_3 }, -- selection caret
-    -- TelescopeMultiSelection = { fg="#928374" }, -- multisections
-    -- TelescopeNormal         = { bg="#00000" }, -- floating windows created by telescope.
-    TelescopeBorder         = { fg=mono_1 },
-    TelescopePromptBorder   = { fg=mono_1 },
-    -- TelescopeResultsBorder  = { fg=special_grey },
-    -- TelescopePreviewBorder  = { fg=special_grey },
-    TelescopeMatching       = { fg=hue_6 },
-    TelescopePromptPrefix   = { fg=hue_5 },
+---------------
+    -- TelescopeSelection = { fg = "#D79921", style = 'bold' }, -- selected item
+    TelescopeSelection = { fg = hue_2, style = 'bold' }, -- selected item
+    TelescopeSelectionCaret = { fg = hue_3 }, -- selection caret
+    -- TelescopeMultiSelection = { fg = "#928374" }, -- multisections
+    -- TelescopeNormal = { bg = "#00000" }, -- floating windows created by telescope.
+    TelescopeBorder = { fg = mono_1 },
+    TelescopePromptBorder = { fg = mono_1 },
+    -- TelescopeResultsBorder = { fg = special_grey },
+    -- TelescopePreviewBorder = { fg = special_grey },
+    TelescopeMatching = { fg = hue_6 },
+    TelescopePromptPrefix = { fg = hue_5 },
+
+------------
+-- Neogit --
+------------
+
+    NeogitDiffContextHighlight = { fg = syntax_fg, bg = syntax_bg },
+    NeogitDiffAddHighlight = { fg = hue_4, bg = '#2a3429' },
+    NeogitDiffDeleteHighlight = { fg = hue_5, bg = '#3f2629' },
+    NeogitHunkHeader = { fg = mono_3, bg = syntax_bg },
+    NeogitHunkHeaderHighlight = { fg = mono_2, bg = syntax_cursor },
 
 }
 
