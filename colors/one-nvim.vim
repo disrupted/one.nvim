@@ -75,8 +75,8 @@ local highlight_groups = {
     -------------------------------------------------------------
     -- Syntax Groups (descriptions and ordering from `:h w18`) --
     -------------------------------------------------------------
-    Normal       = { fg = syntax_fg, bg = syntax_bg },
-    bold         = { fg = none, style = 'bold'},
+    Normal       = { fg = mono_1, bg = syntax_bg },
+    bold         = { style = 'bold'},
     ColorColumn  = { fg = none, bg = syntax_cursor },
     Conceal      = { fg = mono_4, bg = syntax_bg },
     Cursor       = { fg = none, bg = syntax_accent },
@@ -86,15 +86,15 @@ local highlight_groups = {
     Directory    = { fg = hue_2 },
     ErrorMsg     = { fg = hue_5, bg = syntax_bg },
     VertSplit    = { fg = syntax_cursor },
-    Folded       = { fg = syntax_fg, bg = syntax_bg },
+    Folded       = { fg = mono_3, bg = syntax_bg },
     FoldColumn   = { fg = mono_3, bg = syntax_cursor },
     IncSearch    = { fg = syntax_bg, bg = hue_2 },
     LineNr       = { fg = mono_4 },
-    CursorLineNr = { fg = syntax_fg, bg = syntax_cursor },
+    CursorLineNr = { fg = mono_1, bg = syntax_cursor },
     MatchParen   = { fg = hue_5, bg = syntax_cursor, style = 'underline,bold' },
     Italic       = { fg = none, style = 'italic'},
-    ModeMsg      = { fg = syntax_fg },
-    MoreMsg      = { fg = syntax_fg },
+    ModeMsg      = { fg = mono_1 },
+    MoreMsg      = { fg = mono_1 },
     NonText      = { fg = mono_3 },
     PMenu        = { fg = none, bg = pmenu },
     PMenuSel     = { fg = none, bg = mono_4 },
@@ -104,17 +104,17 @@ local highlight_groups = {
     Search       = { fg = syntax_bg, bg = hue_6_2 },
     SpecialKey   = { fg = special_grey},
     Whitespace   = { fg = special_grey},
-    StatusLine   = { fg = syntax_fg, bg = syntax_cursor },
+    StatusLine   = { fg = mono_1, bg = syntax_cursor },
     StatusLineNC = { fg = mono_3 },
     TabLine      = { fg = mono_2, bg = visual_grey},
     TabLineFill  = { fg = mono_3, bg = visual_grey},
     TabLineSel   = { fg = syntax_bg, bg = hue_2 },
-    Title        = { fg = syntax_fg, bg = none, style = 'bold'},
+    Title        = { fg = mono_1, bg = none, style = 'bold'},
     Visual       = { fg = none, bg = visual_grey},
     VisualNOS    = { fg = none, bg = visual_grey},
     WarningMsg   = { fg = hue_5 },
     TooLong      = { fg = hue_5 },
-    WildMenu     = { fg = syntax_fg, bg = mono_3 },
+    WildMenu     = { fg = mono_1, bg = mono_3 },
     SignColumn   = { fg = none, bg = syntax_bg },
     Special      = { fg = hue_2 },
 
@@ -599,8 +599,8 @@ local highlight_groups = {
     TelescopeSelection = { fg = hue_2, style = 'bold' }, -- selected item
     TelescopeSelectionCaret = { fg = hue_3 }, -- selection caret
     -- TelescopeMultiSelection = { fg = "#928374" }, -- multisections
-    -- TelescopeNormal = { bg = "#00000" }, -- floating windows created by telescope.
-    TelescopeBorder = { fg = mono_1 },
+    TelescopeNormal = { fg = normal }, -- floating windows created by telescope.
+    TelescopeBorder = { fg = mono_2 },
     TelescopePromptBorder = { fg = mono_1 },
     -- TelescopeResultsBorder = { fg = special_grey },
     -- TelescopePreviewBorder = { fg = special_grey },
@@ -611,7 +611,7 @@ local highlight_groups = {
 -- Neogit --
 ------------
 
-    NeogitDiffContextHighlight = { fg = syntax_fg, bg = syntax_bg },
+    NeogitDiffContextHighlight = { fg = mono_1, bg = syntax_bg },
     NeogitDiffAddHighlight = { fg = hue_4, bg = '#2a3429' },
     NeogitDiffDeleteHighlight = { fg = hue_5, bg = '#3f2629' },
     NeogitHunkHeader = { fg = mono_3, bg = syntax_bg },
