@@ -22,7 +22,7 @@ if vim.o.background == "dark" then
     vertsplit     = {"#181a1f",  234, "vertsplit"}
     special_grey  = {"#3b4048",  238, "special_grey"}
     visual_grey   = {"#3e4452",  59, "visual_grey"}
-    pmenu         = {"#333841",  59, "pmenu"}
+    pmenu         = {"#2c323c",  23, "pmenu"} -- same as syntax_cursor
     term_black    = {"#282c34",  17, "term_black"}
     term_blue     = {"#61afef",  75, "term_blue"}
     term_cyan     = {"#56b6c2", 247, "term_cyan"}
@@ -90,7 +90,7 @@ local highlight_groups = {
     FoldColumn   = { fg = mono_3, bg = syntax_cursor },
     IncSearch    = { fg = syntax_bg, bg = hue_2 },
     LineNr       = { fg = mono_4 },
-    CursorLineNr = { fg = mono_1, bg = syntax_cursor },
+    CursorLineNr = { fg = mono_1 },
     MatchParen   = { fg = hue_5, bg = syntax_cursor, style = 'underline,bold' },
     Italic       = { fg = none, style = 'italic'},
     ModeMsg      = { fg = mono_1 },
@@ -480,6 +480,7 @@ local highlight_groups = {
     LspReferenceText                     = { style = 'reverse' },
     LspReferenceRead                     = { style = 'reverse' },
     LspReferenceWrite                    = { fg = hue_6_2, style = 'reverse' },
+    FloatBorder                          = { fg = mono_2, bg = pmenu },
 
 -----------------------------
 -- TreeSitter Highlighting --
