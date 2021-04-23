@@ -618,6 +618,14 @@ local highlight_groups = {
     NeogitHunkHeader = { fg = mono_3, bg = syntax_bg },
     NeogitHunkHeaderHighlight = { fg = mono_2, bg = syntax_cursor },
 
+------------
+-- Hop --
+------------
+
+    HopNextKey = { fg = '#ff007c', style = 'bold' },
+    HopNextKey1 = { fg = '#00dfff', style = 'bold' },
+    HopNextKey2 = { fg = '#2b8db3' },
+
 }
 
 local terminal_ansi_colors = {
