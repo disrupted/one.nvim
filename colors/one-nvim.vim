@@ -546,7 +546,6 @@ local highlight_groups = {
     TSAttribute          = { fg = mono_1 },
     TSBoolean            = { fg = hue_6 },
     TSCharacter          = { fg = hue_4 },
-    TSComment            = 'Comment',
     TSConditional        = { fg = hue_3},
     TSConstant           = { fg = hue_6},
     TSConstBuiltin       = { fg = hue_6 },
