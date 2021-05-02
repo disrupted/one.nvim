@@ -57,7 +57,7 @@ else
     term_8        = {"#4f525e", 240, "term_8"}
 end
 
--- Common 
+-- Common
 local pink = {"#d291e4", 251, "pink"}
 local yellow = {"#ffcb43", 1, "yellow"}
 
@@ -171,10 +171,15 @@ local highlight_groups = {
 -- Diff Highlighting --
 -----------------------
 
-    DiffAdd     = { fg = hue_4, syntax_bg},
-    DiffChange  = { fg = hue_6, syntax_bg},
-    DiffDelete  = { fg = hue_5, syntax_bg},
-    DiffText    = { fg = hue_2, syntax_bg},
+    GitSignsAdd     = { fg = hue_4, syntax_bg},
+    GitSignsChange  = { fg = hue_6, syntax_bg},
+    GitSignsDelete  = { fg = hue_5, syntax_bg},
+    DiffAdd     = { fg = none, bg = '#2a3429'},
+    DiffChange  = { fg = none, bg = '#3a2d27'},
+    -- DiffChange  = { fg = none, bg = '#2a3429'},
+    DiffDelete  = { fg = '#652f33', bg = '#3f2529'},
+    DiffText    = { fg = none, bg = '#5b402e'},
+    -- DiffText    = { fg = none, bg = '#3c5134'},
     DiffAdded   = { fg = hue_4, syntax_bg},
     DiffFile    = { fg = hue_5, syntax_bg},
     DiffNewFile = { fg = hue_4, syntax_bg},
@@ -377,7 +382,7 @@ local highlight_groups = {
     -- pythonStringDelimiter = { fg = hue_4 },
     -- pythonSymbol          = { fg = hue_1 },
 
--- Ruby 
+-- Ruby
     -- rubyBlock                     = { fg = hue_3 },
     -- rubyBlockParameter            = { fg = hue_5 },
     -- rubyBlockParameterList        = { fg = hue_5 },
