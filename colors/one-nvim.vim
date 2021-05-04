@@ -117,6 +117,8 @@ local highlight_groups = {
     WildMenu     = { fg = mono_1, bg = mono_3 },
     SignColumn   = { fg = none, bg = syntax_bg },
     Special      = { fg = hue_2 },
+    NormalFloat  = { fg = mono_1 },
+    FloatBorder  = { fg = mono_2 },
 
 ---------------------------
 -- Vim Help Highlighting --
@@ -474,10 +476,10 @@ local highlight_groups = {
     LspDiagnosticsUnderlineWarning       = { fg = hue_6_2 , style = 'underline' },
     LspDiagnosticsUnderlineInformation   = { fg = hue_1 , style = 'underline' },
     LspDiagnosticsUnderlineHint          = { fg = mono_1 , style = 'underline' },
-    LspDiagnosticsFloatingError          = { fg = hue_5 , bg = pmenu },
-    LspDiagnosticsFloatingWarning        = { fg = hue_6_2 , bg = pmenu },
-    LspDiagnosticsFloatingInformation    = { fg = hue_1 , bg = pmenu },
-    LspDiagnosticsFloatingHint           = { fg = mono_1 , bg = pmenu },
+    LspDiagnosticsFloatingError          = { fg = hue_5 },
+    LspDiagnosticsFloatingWarning        = { fg = hue_6_2 },
+    LspDiagnosticsFloatingInformation    = { fg = hue_1 },
+    LspDiagnosticsFloatingHint           = { fg = mono_1 },
     LspDiagnosticsSignError              = { fg = hue_5 },
     LspDiagnosticsSignWarning            = { fg = hue_6_2 },
     LspDiagnosticsSignInformation        = { fg = hue_1 },
@@ -485,7 +487,6 @@ local highlight_groups = {
     LspReferenceText                     = { style = 'reverse' },
     LspReferenceRead                     = { style = 'reverse' },
     LspReferenceWrite                    = { fg = hue_6_2, style = 'reverse' },
-    FloatBorder                          = { fg = mono_2, bg = pmenu },
 
 -----------------------------
 -- TreeSitter Highlighting --
