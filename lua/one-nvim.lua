@@ -44,7 +44,8 @@ end
 	If using 16-bit colors, just populate the cterm* args. ]]
 local colorize = _USE_HEX and function(command, attributes) -- {{{ †
     command[#command + 1] = ' guibg=' .. get(attributes.bg, _PALETTE_HEX) ..
-                                ' guifg=' .. get(attributes.fg, _PALETTE_HEX)
+                                ' guifg=' .. get(attributes.fg, _PALETTE_HEX) ..
+                                ' guisp=' .. get(attributes.sp, _PALETTE_HEX)
 end or _USE_256 and function(command, attributes)
     command[#command + 1] = ' ctermbg=' .. get(attributes.bg, _PALETTE_256) ..
                                 ' ctermfg=' .. get(attributes.fg, _PALETTE_256)
