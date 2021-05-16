@@ -484,9 +484,9 @@ local highlight_groups = {
     LspDiagnosticsSignWarning            = { fg = hue_6_2 },
     LspDiagnosticsSignInformation        = { fg = hue_1 },
     LspDiagnosticsSignHint               = { fg = mono_1 },
-    LspReferenceText                     = { style = 'reverse' },
-    LspReferenceRead                     = { style = 'reverse' },
-    LspReferenceWrite                    = { fg = hue_6_2, style = 'reverse' },
+    -- LspReferenceText                     = { style = 'reverse' },
+    -- LspReferenceRead                     = { style = 'reverse' },
+    -- LspReferenceWrite                    = { fg = hue_6_2, style = 'reverse' },
 
 -----------------------------
 -- TreeSitter Highlighting --
