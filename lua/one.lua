@@ -24,9 +24,10 @@ end
 
 -- filter a highlight group's style information
 local function filter_group_style(value)
-    return
-        value ~= 'background' and value ~= 'blend' and value ~= 'foreground' and
-            value ~= 'special'
+    return value ~= 'background'
+        and value ~= 'blend'
+        and value ~= 'foreground'
+        and value ~= 'special'
 end
 
 -- Get the color value of a color variable, or "NONE" as a default.
@@ -42,33 +43,51 @@ end
 
 --[[ If using hex and 256-bit colors, then populate the gui* and cterm* args.
 	If using 16-bit colors, just populate the cterm* args. ]]
-local colorize = _USE_HEX and function(command, attributes) -- {{{ †
-    command[#command + 1] = ' guibg=' .. get(attributes.bg, _PALETTE_HEX) ..
-                                ' guifg=' .. get(attributes.fg, _PALETTE_HEX) ..
-                                ' guisp=' .. get(attributes.sp, _PALETTE_HEX)
-end or _USE_256 and function(command, attributes)
-    command[#command + 1] = ' ctermbg=' .. get(attributes.bg, _PALETTE_256) ..
-                                ' ctermfg=' .. get(attributes.fg, _PALETTE_256)
-end or function(command, attributes)
-    command[#command + 1] = ' ctermbg=' .. get(attributes.bg, _PALETTE_ANSI) ..
-                                ' ctermfg=' .. get(attributes.fg, _PALETTE_ANSI)
-end
+local colorize = _USE_HEX
+        and function(command, attributes) -- {{{ †
+            command[#command + 1] = ' guibg='
+                .. get(attributes.bg, _PALETTE_HEX)
+                .. ' guifg='
+                .. get(attributes.fg, _PALETTE_HEX)
+                .. ' guisp='
+                .. get(attributes.sp, _PALETTE_HEX)
+        end
+    or _USE_256 and function(command, attributes)
+        command[#command + 1] = ' ctermbg='
+            .. get(attributes.bg, _PALETTE_256)
+            .. ' ctermfg='
+            .. get(attributes.fg, _PALETTE_256)
+    end
+    or function(command, attributes)
+        command[#command + 1] = ' ctermbg='
+            .. get(attributes.bg, _PALETTE_ANSI)
+            .. ' ctermfg='
+            .. get(attributes.fg, _PALETTE_ANSI)
+    end
 
 -- This function appends `selected_attributes` to the end of `highlight_cmd`.
-local stylize = _USE_HEX and function(command, style, color)
-    command[#command + 1] = ' gui=' .. style
+local stylize = _USE_HEX
+        and function(command, style, color)
+            command[#command + 1] = ' gui=' .. style
 
-    if color then -- There is an undercurl color.
-        command[#command + 1] = ' guisp=' .. get(color, _PALETTE_HEX)
+            if color then -- There is an undercurl color.
+                command[#command + 1] = ' guisp=' .. get(color, _PALETTE_HEX)
+            end
+        end
+    or function(command, style)
+        command[#command + 1] = ' cterm=' .. style
     end
-end or function(command, style) command[#command + 1] = ' cterm=' .. style end
 
-local function tohex(rgb) return string.format('#%06x', rgb) end
+local function tohex(rgb)
+    return string.format('#%06x', rgb)
+end
 
 -- Load specific &bg instructions
 local function use_background_with(attributes)
-    return
-        setmetatable(attributes[vim.go.background], {['__index'] = attributes})
+    return setmetatable(
+        attributes[vim.go.background],
+        { ['__index'] = attributes }
+    )
 end
 
 --[[ MODULE ]]
@@ -76,32 +95,41 @@ end
 local highlite = {}
 
 function highlite.group(group_name)
-    local no_errors, group_definition = pcall(api.nvim_get_hl_by_name,
-                                              group_name, vim.go.termguicolors)
+    local no_errors, group_definition = pcall(
+        api.nvim_get_hl_by_name,
+        group_name,
+        vim.go.termguicolors
+    )
 
-    if not no_errors then group_definition = {} end
+    if not no_errors then
+        group_definition = {}
+    end
 
     -- the style of the highlight group
-    local style = vim.tbl_filter(filter_group_style,
-                                 vim.tbl_keys(group_definition))
+    local style = vim.tbl_filter(
+        filter_group_style,
+        vim.tbl_keys(group_definition)
+    )
     if group_definition.special then
         style.color = tohex(group_definition.special)
     end
 
     return {
-        ['fg'] = group_definition.foreground and
-            tohex(group_definition.foreground) or _NONE,
-        ['bg'] = group_definition.background and
-            tohex(group_definition.background) or _NONE,
+        ['fg'] = group_definition.foreground and tohex(
+            group_definition.foreground
+        ) or _NONE,
+        ['bg'] = group_definition.background and tohex(
+            group_definition.background
+        ) or _NONE,
         ['blend'] = group_definition.blend,
-        ['style'] = style or _NONE
+        ['style'] = style or _NONE,
     }
 end
 
 -- Generate a `:highlight` command from a group and some attributes.
 function highlite.highlight(highlight_group, attributes) -- {{{ †
     -- The base highlight command
-    local highlight_cmd = {'hi! ', highlight_group}
+    local highlight_cmd = { 'hi! ', highlight_group }
 
     if type(attributes) == _TYPE_STRING then -- `highlight_group` is a link to another group.
         highlight_cmd[3] = highlight_cmd[2]
@@ -132,9 +160,10 @@ end
 
 function highlite:highlight_terminal(terminal_ansi_colors)
     for index, color in ipairs(terminal_ansi_colors) do
-        vim.g['terminal_color_' .. index] =
-            vim.go.termguicolors and color[_PALETTE_HEX] or color[_PALETTE_256] or
-                get(color, _PALETTE_ANSI)
+        vim.g['terminal_color_' .. index] = vim.go.termguicolors
+                and color[_PALETTE_HEX]
+            or color[_PALETTE_256]
+            or get(color, _PALETTE_ANSI)
     end
 end
 
@@ -149,10 +178,13 @@ return setmetatable(highlite, {
                 tbl[key] = value(setmetatable({}, {
                     ['__index'] = function(_, inner_key)
                         return resolve(tbl, inner_key, true)
-                    end
+                    end,
                 }))
-            elseif value_type == _TYPE_STRING and not string.find(value, '^#') and
-                resolve_links then
+            elseif
+                value_type == _TYPE_STRING
+                and not string.find(value, '^#')
+                and resolve_links
+            then
                 return resolve(tbl, tbl[key], resolve_links)
             end
 
@@ -166,25 +198,31 @@ return setmetatable(highlite, {
         exe 'hi clear'
 
         -- If the syntax has been enabled, reset it.
-        if fn.exists 'syntax_on' then exe 'syntax reset' end
+        if fn.exists 'syntax_on' then
+            exe 'syntax reset'
+        end
 
         -- replace the colors_name
         vim.g.colors_name = color_name
         color_name = nil
 
         -- If we aren't using hex nor 256 colorsets.
-        if not (_USE_HEX or _USE_256) then vim.go.t_Co = '16' end
+        if not (_USE_HEX or _USE_256) then
+            vim.go.t_Co = '16'
+        end
 
         -- Highlight the baseline.
         self.highlight('Normal', normal)
 
         -- Highlight everything else.
         for highlight_group, _ in pairs(highlights) do
-            self.highlight(highlight_group,
-                           resolve(highlights, highlight_group, false))
+            self.highlight(
+                highlight_group,
+                resolve(highlights, highlight_group, false)
+            )
         end
 
         -- Set the terminal highlight colors.
         self:highlight_terminal(terminal_ansi_colors)
-    end
+    end,
 })
