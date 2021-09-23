@@ -1,4 +1,4 @@
-vim.g.colors_name = "one-nvim"
+vim.g.colors_name = "one"
 
 if vim.o.background == "dark" then
     -- Dark Colors
