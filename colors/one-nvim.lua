@@ -1,4 +1,3 @@
-lua << EOF
 vim.g.colors_name = "one-nvim"
 
 if vim.o.background == "dark" then
@@ -657,6 +656,3 @@ local terminal_ansi_colors = {
 require(vim.g.colors_name)(highlight_group_normal, highlight_groups, terminal_ansi_colors)
 
 -- Thanks to Iron-E (https://github.com/Iron-E) for the template (Iron-E/nvim-highlite).
--- vim: ft=lua
-
-EOF
