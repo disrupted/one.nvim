@@ -598,6 +598,7 @@ local highlight_groups = {
     TSVariable           = { fg = mono_1 },
     TSVariableBuiltin    = { fg = hue_6_2 },
     LightBulb            = { fg = yellow },
+    LightBulbVirtualText = 'CursorLine',
 
 ---------------
 -- Telescope --
