@@ -1,4 +1,4 @@
-local vim, api, fn, exe = vim, vim.api, vim.fn, vim.api.nvim_command
+local vim, api, fn, cmd = vim, vim.api, vim.fn, vim.cmd
 
 --[[ VARIABLES ]]
 -- These are constants for the indexes in the colors that were defined before.
@@ -155,7 +155,7 @@ function highlite.highlight(highlight_group, attributes) -- {{{ †
         end
     end
 
-    exe(table.concat(highlight_cmd))
+    cmd(table.concat(highlight_cmd))
 end
 
 function highlite:highlight_terminal(terminal_ansi_colors)
@@ -195,11 +195,11 @@ return setmetatable(highlite, {
         local color_name = vim.g.colors_name
 
         -- Clear the highlighting.
-        exe 'hi clear'
+        cmd 'hi clear'
 
         -- If the syntax has been enabled, reset it.
         if fn.exists 'syntax_on' then
-            exe 'syntax reset'
+            cmd 'syntax reset'
         end
 
         -- replace the colors_name
