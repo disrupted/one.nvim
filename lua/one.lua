@@ -9,10 +9,6 @@ local _PALETTE_HEX = 1
 local _TYPE_STRING = 'string'
 local _TYPE_TABLE = 'table'
 
--- Determine which set of colors to use.
-local _USE_HEX = vim.go.termguicolors
-local _USE_256 = tonumber(vim.go.t_Co) > 255 or string.find(vim.env.TERM, '256')
-
 --[[ HELPER FUNCTIONS ]]
 
 -- Add the 'blend' parameter to some highlight command, if there is one.
@@ -43,40 +39,25 @@ end
 
 --[[ If using hex and 256-bit colors, then populate the gui* and cterm* args.
 	If using 16-bit colors, just populate the cterm* args. ]]
-local colorize = _USE_HEX
-        and function(command, attributes) -- {{{ †
-            command[#command + 1] = ' guibg='
-                .. get(attributes.bg, _PALETTE_HEX)
-                .. ' guifg='
-                .. get(attributes.fg, _PALETTE_HEX)
-                .. ' guisp='
-                .. get(attributes.sp, _PALETTE_HEX)
-        end
-    or _USE_256 and function(command, attributes)
-        command[#command + 1] = ' ctermbg='
-            .. get(attributes.bg, _PALETTE_256)
-            .. ' ctermfg='
-            .. get(attributes.fg, _PALETTE_256)
-    end
-    or function(command, attributes)
-        command[#command + 1] = ' ctermbg='
-            .. get(attributes.bg, _PALETTE_ANSI)
-            .. ' ctermfg='
-            .. get(attributes.fg, _PALETTE_ANSI)
-    end
-
+local colorize = function(command, attributes) -- {{{ †
+    local c = table.concat {
+        ' guibg=',
+        get(attributes.bg, _PALETTE_HEX),
+        ' guifg=',
+        get(attributes.fg, _PALETTE_HEX),
+        ' guisp=',
+        get(attributes.sp, _PALETTE_HEX),
+    }
+    command[#command + 1] = c
+end
 -- This function appends `selected_attributes` to the end of `highlight_cmd`.
-local stylize = _USE_HEX
-        and function(command, style, color)
-            command[#command + 1] = ' gui=' .. style
+local stylize = function(command, style, color)
+    command[#command + 1] = ' gui=' .. style
 
-            if color then -- There is an undercurl color.
-                command[#command + 1] = ' guisp=' .. get(color, _PALETTE_HEX)
-            end
-        end
-    or function(command, style)
-        command[#command + 1] = ' cterm=' .. style
+    if color then -- There is an undercurl color.
+        command[#command + 1] = ' guisp=' .. get(color, _PALETTE_HEX)
     end
+end
 
 local function tohex(rgb)
     return string.format('#%06x', rgb)
@@ -205,11 +186,6 @@ return setmetatable(highlite, {
         -- replace the colors_name
         vim.g.colors_name = color_name
         color_name = nil
-
-        -- If we aren't using hex nor 256 colorsets.
-        if not (_USE_HEX or _USE_256) then
-            vim.go.t_Co = '16'
-        end
 
         -- Highlight the baseline.
         self.highlight('Normal', normal)
