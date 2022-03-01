@@ -53,7 +53,8 @@ local highlights = {
     MatchParen = {
         fg = colors.hue_5,
         bg = colors.syntax_cursor,
-        style = 'underline,bold',
+        bold = true,
+        underline = true,
     },
     ModeMsg = { fg = colors.mono_1 },
     MoreMsg = { fg = colors.mono_1 },
@@ -70,8 +71,8 @@ local highlights = {
     StatusLineNC = { fg = colors.mono_3 },
     TabLine = { fg = colors.mono_4 },
     TabLineFill = { fg = colors.mono_4 },
-    TabLineSel = { fg = colors.mono_2, style = 'bold' },
-    Title = { fg = colors.mono_1, style = 'bold' },
+    TabLineSel = { fg = colors.mono_2, bold = true },
+    Title = { fg = colors.mono_1, bold = true },
     Visual = { bg = colors.visual_grey },
     VisualNOS = { bg = colors.visual_grey },
     WarningMsg = { fg = colors.hue_5 },
@@ -88,14 +89,14 @@ local highlights = {
 
     helpCommand = { fg = colors.hue_6_2 },
     helpExample = { fg = colors.hue_6_2 },
-    helpHeader = { fg = colors.mono_1, style = 'bold' },
+    helpHeader = { fg = colors.mono_1, bold = true },
     helpSectionDelim = { fg = colors.mono_3 },
 
     ----------------------------------
     -- Standard Syntax Highlighting --
     ----------------------------------
 
-    Comment = { fg = colors.mono_3, style = 'italic' },
+    Comment = { fg = colors.mono_3, italic = true },
     Constant = { fg = colors.hue_4 },
     String = { fg = colors.hue_4 },
     Character = { fg = colors.hue_4 },
@@ -124,29 +125,29 @@ local highlights = {
     -- Tag = NONE,
     -- Delimiter = NONE,
     -- Debug = NONE,
-    Underlined = { style = 'underline' },
+    Underlined = { underline = true },
     -- Ignore = NONE,
-    Error = { fg = colors.hue_5, bg = colors.syntax_bg, style = 'bold' },
+    Error = { fg = colors.hue_5, bg = colors.syntax_bg, bold = true },
     Todo = { fg = colors.hue_3, bg = colors.syntax_bg },
 
     -----------------------
     -- Diff Highlighting --
     -----------------------
 
-    GitSignsAdd = { fg = colors.hue_4, colors.syntax_bg },
-    GitSignsChange = { fg = colors.hue_6, colors.syntax_bg },
-    GitSignsDelete = { fg = colors.hue_5, colors.syntax_bg },
+    GitSignsAdd = { fg = colors.hue_4, bg = colors.syntax_bg },
+    GitSignsChange = { fg = colors.hue_6, bg = colors.syntax_bg },
+    GitSignsDelete = { fg = colors.hue_5, bg = colors.syntax_bg },
     DiffAdd = { bg = '#2a3429' },
     DiffChange = { bg = '#3a2d27' },
     -- DiffChange  = { bg = '#2a3429'},
     DiffDelete = { fg = '#652f33', bg = '#3f2529' },
     DiffText = { bg = '#5b402e' },
     -- DiffText    = { bg = '#3c5134'},
-    DiffAdded = { fg = colors.hue_4, colors.syntax_bg },
-    DiffFile = { fg = colors.hue_5, colors.syntax_bg },
-    DiffNewFile = { fg = colors.hue_4, colors.syntax_bg },
-    DiffLine = { fg = colors.hue_2, colors.syntax_bg },
-    DiffRemoved = { fg = colors.hue_5, colors.syntax_bg },
+    DiffAdded = { fg = colors.hue_4, bg = colors.syntax_bg },
+    DiffFile = { fg = colors.hue_5, bg = colors.syntax_bg },
+    DiffNewFile = { fg = colors.hue_4, bg = colors.syntax_bg },
+    DiffLine = { fg = colors.hue_2, bg = colors.syntax_bg },
+    DiffRemoved = { fg = colors.hue_5, bg = colors.syntax_bg },
 
     ---------------------------
     -- Filetype Highlighting --
@@ -165,19 +166,19 @@ local highlights = {
     gitcommitSelectedFile = { fg = colors.hue_4 },
     gitcommitUnmergedFile = { fg = colors.hue_6_2 },
     -- gitcommitFile = NONE,
-    gitcommitNoBranch = 'gitcommitBranch',
-    gitcommitUntracked = 'gitcommitComment',
-    gitcommitDiscarded = 'gitcommitComment',
-    gitcommitDiscardedArrow = 'gitcommitDiscardedFile',
-    gitcommitSelectedArrow = 'gitcommitSelectedFile',
-    gitcommitUnmergedArrow = 'gitcommitUnmergedFile',
+    -- gitcommitNoBranch = 'gitcommitBranch',
+    -- gitcommitUntracked = 'gitcommitComment',
+    -- gitcommitDiscarded = 'gitcommitComment',
+    -- gitcommitDiscardedArrow = 'gitcommitDiscardedFile',
+    -- gitcommitSelectedArrow = 'gitcommitSelectedFile',
+    -- gitcommitUnmergedArrow = 'gitcommitUnmergedFile',
     diffAdded = { fg = colors.hue_4 },
     diffRemoved = { fg = colors.hue_5 },
 
     -- Markdown
     markdownUrl = { fg = colors.mono_3 },
-    markdownBold = { fg = colors.hue_6, style = 'bold' },
-    markdownItalic = { fg = colors.hue_6, style = 'bold' },
+    markdownBold = { fg = colors.hue_6, bold = true },
+    markdownItalic = { fg = colors.hue_6, bold = true },
     markdownCode = { fg = colors.hue_4 },
     markdownCodeBlock = { fg = colors.hue_5 },
     markdownCodeDelimiter = { fg = colors.hue_4 },
@@ -191,18 +192,18 @@ local highlights = {
     markdownListMarker = { fg = colors.hue_5 },
 
     -- Spelling
-    SpellBad = { fg = colors.mono_3, style = 'undercurl' },
-    SpellLocal = { fg = colors.mono_3, style = 'undercurl' },
-    SpellCap = { fg = colors.mono_3, style = 'undercurl' },
-    SpellRare = { fg = colors.mono_3, style = 'undercurl' },
+    SpellBad = { fg = colors.mono_3, undercurl = true },
+    SpellLocal = { fg = colors.mono_3, undercurl = true },
+    SpellCap = { fg = colors.mono_3, undercurl = true },
+    SpellRare = { fg = colors.mono_3, undercurl = true },
 
     -- Vim
     vimCommand = { fg = colors.hue_3 },
-    vimCommentTitle = { fg = colors.mono_3, style = 'bold' },
+    vimCommentTitle = { fg = colors.mono_3, bold = true },
     vimFunction = { fg = colors.hue_1 },
     vimFuncName = { fg = colors.hue_3 },
     vimHighlight = { fg = colors.hue_2 },
-    vimLineComment = { fg = colors.mono_3, style = 'italic' },
+    vimLineComment = { fg = colors.mono_3, italic = true },
     vimParenSep = { fg = colors.mono_2 },
     vimSep = { fg = colors.mono_2 },
     vimUserFunc = { fg = colors.hue_1 },
@@ -226,7 +227,7 @@ local highlights = {
     zshVariableDef = { fg = colors.hue_6 },
 
     -- Rust
-    rustExternCrate = { fg = colors.hue_5, style = 'bold' },
+    rustExternCrate = { fg = colors.hue_5, bold = true },
     rustIdentifier = { fg = colors.hue_2 },
     rustDeriveTrait = { fg = colors.hue_4 },
     SpecialComment = { fg = colors.mono_3 },
@@ -238,7 +239,7 @@ local highlights = {
     rustCommentBlockDocError = { fg = colors.mono_3 },
 
     -- Man
-    manTitle = 'String',
+    -- manTitle = 'String',
     manFooter = { fg = colors.mono_3 },
 
     -----------------------------
@@ -253,10 +254,10 @@ local highlights = {
     DiagnosticVirtualTextWarn = { fg = colors.hue_6_2 },
     DiagnosticVirtualTextInfo = { fg = colors.hue_2 },
     DiagnosticVirtualTextHint = { fg = colors.mono_1 },
-    DiagnosticUnderlineError = { sp = colors.hue_5, style = 'undercurl' },
-    DiagnosticUnderlineWarn = { sp = colors.hue_6_2, style = 'undercurl' },
-    DiagnosticUnderlineInfo = { sp = colors.hue_2, style = 'undercurl' },
-    DiagnosticUnderlineHint = { sp = colors.mono_1, style = 'undercurl' },
+    DiagnosticUnderlineError = { sp = colors.hue_5, undercurl = true },
+    DiagnosticUnderlineWarn = { sp = colors.hue_6_2, undercurl = true },
+    DiagnosticUnderlineInfo = { sp = colors.hue_2, undercurl = true },
+    DiagnosticUnderlineHint = { sp = colors.mono_1, undercurl = true },
     DiagnosticFloatingError = { fg = colors.hue_5 },
     DiagnosticFloatingWarn = { fg = colors.hue_6_2 },
     DiagnosticFloatingInfo = { fg = colors.hue_2 },
@@ -265,9 +266,9 @@ local highlights = {
     DiagnosticSignWarn = { fg = colors.hue_6_2 },
     DiagnosticSignInfo = { fg = colors.hue_2 },
     DiagnosticSignHint = { fg = colors.mono_1 },
-    -- LspReferenceText                     = { style = 'reverse' },
-    -- LspReferenceRead                     = { style = 'reverse' },
-    -- LspReferenceWrite                    = { fg = colors.hue_6_2, style = 'reverse' },
+    -- LspReferenceText                     = { reverse = true },
+    -- LspReferenceRead                     = { reverse = true },
+    -- LspReferenceWrite                    = { fg = colors.hue_6_2, reverse = true },
     TSDefinition = { bg = colors.syntax_cursor },
     TSDefinitionUsage = { bg = colors.syntax_cursor },
 
@@ -330,7 +331,7 @@ local highlights = {
     ---------------
     -- Telescope --
     ---------------
-    TelescopeSelection = { fg = colors.hue_2, style = 'bold' }, -- selected item
+    TelescopeSelection = { fg = colors.hue_2, bold = true }, -- selected item
     TelescopeSelectionCaret = { fg = colors.hue_3 }, -- selection caret
     TelescopeBorder = { fg = colors.mono_2 },
     TelescopePromptBorder = { fg = colors.mono_1 },
@@ -354,14 +355,14 @@ local highlights = {
     -- Hop --
     ------------
 
-    HopNextKey = { fg = '#ff007c', style = 'bold' },
-    HopNextKey1 = { fg = '#00dfff', style = 'bold' },
+    HopNextKey = { fg = '#ff007c', bold = true },
+    HopNextKey1 = { fg = '#00dfff', bold = true },
     HopNextKey2 = { fg = '#2b8db3' },
 }
 
 M.colorscheme = function()
     for group, highlight in pairs(highlights) do
-        vim.api.nvim_set_hl(0, group, { fg = highlight.fg, bg = highlight.bg })
+        vim.api.nvim_set_hl(0, group, highlight)
     end
 end
 
