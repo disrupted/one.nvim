@@ -149,98 +149,11 @@ local highlights = {
     DiffLine = { fg = colors.hue_2, bg = colors.syntax_bg },
     DiffRemoved = { fg = colors.hue_5, bg = colors.syntax_bg },
 
-    ---------------------------
-    -- Filetype Highlighting --
-    ---------------------------
-
-    -- Git and git related plugins
-    gitcommitComment = { fg = colors.mono_3 },
-    gitcommitUnmerged = { fg = colors.hue_4 },
-    -- gitcommitOnBranch = NONE,
-    gitcommitBranch = { fg = colors.hue_3 },
-    gitcommitDiscardedType = { fg = colors.hue_5 },
-    gitcommitSelectedType = { fg = colors.hue_4 },
-    -- gitcommitHeader = NONE,
-    gitcommitUntrackedFile = { fg = colors.hue_2 },
-    gitcommitDiscardedFile = { fg = colors.hue_5 },
-    gitcommitSelectedFile = { fg = colors.hue_4 },
-    gitcommitUnmergedFile = { fg = colors.hue_6_2 },
-    -- gitcommitFile = NONE,
-    -- gitcommitNoBranch = 'gitcommitBranch',
-    -- gitcommitUntracked = 'gitcommitComment',
-    -- gitcommitDiscarded = 'gitcommitComment',
-    -- gitcommitDiscardedArrow = 'gitcommitDiscardedFile',
-    -- gitcommitSelectedArrow = 'gitcommitSelectedFile',
-    -- gitcommitUnmergedArrow = 'gitcommitUnmergedFile',
-    diffAdded = { fg = colors.hue_4 },
-    diffRemoved = { fg = colors.hue_5 },
-
-    -- Markdown
-    markdownUrl = { fg = colors.mono_3 },
-    markdownBold = { fg = colors.hue_6, bold = true },
-    markdownItalic = { fg = colors.hue_6, bold = true },
-    markdownCode = { fg = colors.hue_4 },
-    markdownCodeBlock = { fg = colors.hue_5 },
-    markdownCodeDelimiter = { fg = colors.hue_4 },
-    markdownHeadingDelimiter = { fg = colors.hue_5_2 },
-    markdownH1 = { fg = colors.hue_5 },
-    markdownH2 = { fg = colors.hue_5 },
-    markdownH3 = { fg = colors.hue_5 },
-    markdownH4 = { fg = colors.hue_5 },
-    markdownH5 = { fg = colors.hue_5 },
-    markdownH6 = { fg = colors.hue_5 },
-    markdownListMarker = { fg = colors.hue_5 },
-
     -- Spelling
     SpellBad = { fg = colors.mono_3, undercurl = true },
     SpellLocal = { fg = colors.mono_3, undercurl = true },
     SpellCap = { fg = colors.mono_3, undercurl = true },
     SpellRare = { fg = colors.mono_3, undercurl = true },
-
-    -- Vim
-    vimCommand = { fg = colors.hue_3 },
-    vimCommentTitle = { fg = colors.mono_3, bold = true },
-    vimFunction = { fg = colors.hue_1 },
-    vimFuncName = { fg = colors.hue_3 },
-    vimHighlight = { fg = colors.hue_2 },
-    vimLineComment = { fg = colors.mono_3, italic = true },
-    vimParenSep = { fg = colors.mono_2 },
-    vimSep = { fg = colors.mono_2 },
-    vimUserFunc = { fg = colors.hue_1 },
-    vimVar = { fg = colors.hue_5 },
-
-    -- XML
-    xmlAttrib = { fg = colors.hue_6_2 },
-    xmlEndTag = { fg = colors.hue_5 },
-    xmlTag = { fg = colors.hue_5 },
-    xmlTagName = { fg = colors.hue_5 },
-
-    -- ZSH
-    zshCommands = { fg = colors.mono_1 },
-    zshDeref = { fg = colors.hue_5 },
-    zshShortDeref = { fg = colors.hue_5 },
-    zshFunction = { fg = colors.hue_1 },
-    zshKeyword = { fg = colors.hue_3 },
-    zshSubst = { fg = colors.hue_5 },
-    zshSubstDelim = { fg = colors.mono_3 },
-    zshTypes = { fg = colors.hue_3 },
-    zshVariableDef = { fg = colors.hue_6 },
-
-    -- Rust
-    rustExternCrate = { fg = colors.hue_5, bold = true },
-    rustIdentifier = { fg = colors.hue_2 },
-    rustDeriveTrait = { fg = colors.hue_4 },
-    SpecialComment = { fg = colors.mono_3 },
-    rustCommentLine = { fg = colors.mono_3 },
-    rustCommentLineDoc = { fg = colors.mono_3 },
-    rustCommentLineDocError = { fg = colors.mono_3 },
-    rustCommentBlock = { fg = colors.mono_3 },
-    rustCommentBlockDoc = { fg = colors.mono_3 },
-    rustCommentBlockDocError = { fg = colors.mono_3 },
-
-    -- Man
-    -- manTitle = 'String',
-    manFooter = { fg = colors.mono_3 },
 
     -----------------------------
     --     LSP Highlighting    --
@@ -269,12 +182,15 @@ local highlights = {
     -- LspReferenceText                     = { reverse = true },
     -- LspReferenceRead                     = { reverse = true },
     -- LspReferenceWrite                    = { fg = colors.hue_6_2, reverse = true },
+
+    -------------------------
+    -- TreeSitter Refactor --
+    -------------------------
     TSDefinition = { bg = colors.syntax_cursor },
     TSDefinitionUsage = { bg = colors.syntax_cursor },
 
     -----------------------------
     -- TreeSitter Highlighting --
-    -- CUSTOM disrupted        --
     -----------------------------
 
     TSAnnotation = { fg = colors.hue_6_2 },
@@ -326,6 +242,10 @@ local highlights = {
     TSURI = { fg = colors.hue_6_2 },
     TSVariable = { fg = colors.mono_1 },
     TSVariableBuiltin = { fg = colors.hue_6_2 },
+
+    ---------------
+    -- Lightbulb --
+    ---------------
     LightBulb = { fg = yellow },
 
     ---------------
@@ -350,14 +270,6 @@ local highlights = {
         fg = colors.mono_2,
         bg = colors.syntax_cursor,
     },
-
-    ------------
-    -- Hop --
-    ------------
-
-    HopNextKey = { fg = '#ff007c', bold = true },
-    HopNextKey1 = { fg = '#00dfff', bold = true },
-    HopNextKey2 = { fg = '#2b8db3' },
 }
 
 M.colorscheme = function()
