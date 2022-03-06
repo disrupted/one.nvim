@@ -1,8 +1,6 @@
 # One Neovim Theme
 
-> personal fork of [one-nvim](https://github.com/Th3Whit3Wolf/one-nvim)
-
-An Atom One inspired dark and light colorscheme for neovim. Plugin modeled after [highlite.vim](https://github.com/Iron-E/nvim-highlite/blob/master/colors/highlite.vim) template
+An Atom One inspired dark and light colorscheme for Neovim.
 
 ## Screenshots
 
@@ -14,10 +12,6 @@ Light theme
 
 ![light theme](assets/light.png)
 
-_Font:_ Jet Brains Mono
-_Statusline:_ [Spaceline](https://github.com/glepnir/spaceline.vim)
-_RGB Highlightin:_ [nvim-colorizer.](https://github.com/norcalli/nvim-colorizer.lua)
-
 ### Getting Started
 
 #### Packer
@@ -26,7 +20,7 @@ _RGB Highlightin:_ [nvim-colorizer.](https://github.com/norcalli/nvim-colorizer.
 use {
     'disrupted/one.nvim',
     config = function()
-        vim.cmd 'colorscheme one'
+        require('one').colorscheme()
     end,
 }
 ```
