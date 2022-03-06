@@ -86,7 +86,6 @@ local highlights = {
     ---------------------------
     -- Vim Help Highlighting --
     ---------------------------
-
     helpCommand = { fg = colors.hue_6_2 },
     helpExample = { fg = colors.hue_6_2 },
     helpHeader = { fg = colors.mono_1, bold = true },
@@ -95,7 +94,6 @@ local highlights = {
     ----------------------------------
     -- Standard Syntax Highlighting --
     ----------------------------------
-
     Comment = { fg = colors.mono_3, italic = true },
     Constant = { fg = colors.hue_4 },
     String = { fg = colors.hue_4 },
@@ -133,7 +131,6 @@ local highlights = {
     -----------------------
     -- Diff Highlighting --
     -----------------------
-
     GitSignsAdd = { fg = colors.hue_4, bg = colors.syntax_bg },
     GitSignsChange = { fg = colors.hue_6, bg = colors.syntax_bg },
     GitSignsDelete = { fg = colors.hue_5, bg = colors.syntax_bg },
@@ -158,7 +155,6 @@ local highlights = {
     -----------------------------
     --     LSP Highlighting    --
     -----------------------------
-
     DiagnosticError = { fg = colors.hue_5 },
     DiagnosticWarn = { fg = colors.hue_6_2 },
     DiagnosticInfo = { fg = colors.hue_2 },
@@ -182,6 +178,7 @@ local highlights = {
     -- LspReferenceText                     = { reverse = true },
     -- LspReferenceRead                     = { reverse = true },
     -- LspReferenceWrite                    = { fg = colors.hue_6_2, reverse = true },
+    LspSignatureActiveParameter = { fg = yellow, bold = true },
 
     -------------------------
     -- TreeSitter Refactor --
@@ -192,7 +189,6 @@ local highlights = {
     -----------------------------
     -- TreeSitter Highlighting --
     -----------------------------
-
     TSAnnotation = { fg = colors.hue_6_2 },
     TSAttribute = { fg = colors.mono_1 },
     TSBoolean = { fg = colors.hue_6 },
@@ -261,7 +257,6 @@ local highlights = {
     ------------
     -- Neogit --
     ------------
-
     NeogitDiffContextHighlight = { fg = colors.mono_1, bg = colors.syntax_bg },
     NeogitDiffAddHighlight = { fg = colors.hue_4, bg = '#2a3429' },
     NeogitDiffDeleteHighlight = { fg = colors.hue_5, bg = '#3f2629' },
