@@ -1,5 +1,6 @@
 local M = {}
 
+-- dark colors
 local colors = {
     mono_1 = '#abb2bf',
     mono_2 = '#828997',
@@ -27,6 +28,36 @@ local colors = {
     term_white = '#dcdfe4',
     term_8 = '#5d677a',
 }
+
+-- light colors
+-- TODO
+--[[ local colors = {
+    mono_1 = { '#494b53', 59, 'mono_1' },
+    mono_2 = { '#696c77', 60, 'mono_2' },
+    mono_3 = { '#a0a1a7', 247, 'mono_3' },
+    mono_4 = { '#c2c2c3', 251, 'mono_4' },
+    hue_1 = { '#0184bc', 31, 'hue_1' },
+    hue_2 = { '#4078f2', 69, 'hue_2' },
+    hue_3 = { '#a626a4', 243, 'hue_3' },
+    hue_4 = { '#50a14f', 242, 'hue_4' },
+    hue_5 = { '#e45649', 244, 'hue_5' },
+    hue_5_2 = { '#ca1243', 241, 'hue_5_2' },
+    hue_6 = { '#986801', 94, 'hue_6' },
+    hue_6_2 = { '#c18401', 242, 'hue_6_2' },
+    syntax_bg = { '#fafafa', 231, 'syntax_bg' },
+    syntax_gutter = { '#9e9e9e', 247, 'syntax_gutter' },
+    syntax_cursor = { '#f0f0f0', 255, 'syntax_cursor' },
+    syntax_accent = { '#526fff', 246, 'syntax_accent' },
+    vertsplit = { '#e7e9e1', 254, 'vertsplit' },
+    special_grey = { '#d3d3d3', 252, 'special_grey' },
+    visual_grey = { '#d0d0d0', 252, 'visual_grey' },
+    pmenu = { '#dfdfdf', 254, 'pmenu' },
+    term_black = { '#383a42', 237, 'term_black' },
+    term_blue = { '#0184bc', 31, 'term_blue' },
+    term_cyan = { '#0997b3', 243, 'term_cyan' },
+    term_white = { '#fafafa', 231, 'term_white' },
+    term_8 = { '#4f525e', 240, 'term_8' },
+} ]]
 
 local pink = '#d291e4'
 local yellow = '#ffcb43'
