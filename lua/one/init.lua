@@ -171,7 +171,7 @@ local highlights = {
     DiffAdd = { bg = '#2a3429' },
     DiffChange = { bg = '#3a2d27' },
     -- DiffChange  = { bg = '#2a3429'},
-    DiffDelete = { fg = '#652f33', bg = '#3f2529' },
+    DiffDelete = { bg = '#3f2529' },
     DiffText = { bg = '#5b402e' },
     -- DiffText    = { bg = '#3c5134'},
     DiffAdded = { fg = colors.hue_4, bg = colors.syntax_bg },
