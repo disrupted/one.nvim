@@ -160,7 +160,7 @@ local highlights = {
     Underlined = { underline = true },
     -- Ignore = NONE,
     Error = { fg = colors.hue_5, bg = colors.syntax_bg, bold = true },
-    Todo = { fg = colors.hue_3, bg = colors.syntax_bg },
+    Todo = { fg = colors.hue_3 },
 
     -----------------------
     -- Diff Highlighting --
