@@ -209,16 +209,16 @@ local highlights = {
     DiagnosticSignWarn = { fg = colors.hue_6_2 },
     DiagnosticSignInfo = { fg = colors.hue_2 },
     DiagnosticSignHint = { fg = colors.mono_1 },
-    LspReferenceText = { reverse = true },
-    LspReferenceRead = { reverse = true },
+    LspReferenceText = { bg = colors.special_grey },
+    LspReferenceRead = { bg = colors.special_grey },
     LspReferenceWrite = { fg = colors.hue_6_2, reverse = true },
     LspSignatureActiveParameter = { fg = yellow, bold = true },
 
     -------------------------
     -- TreeSitter Refactor --
     -------------------------
-    TSDefinition = { reverse = true },
-    TSDefinitionUsage = { reverse = true },
+    TSDefinition = { link = 'LspReferenceWrite' },
+    TSDefinitionUsage = { link = 'LspReferenceRead' },
     TSCurrentScope = { fg = colors.hue_6_2, reverse = true },
 
     -----------------------------
