@@ -209,16 +209,17 @@ local highlights = {
     DiagnosticSignWarn = { fg = colors.hue_6_2 },
     DiagnosticSignInfo = { fg = colors.hue_2 },
     DiagnosticSignHint = { fg = colors.mono_1 },
-    -- LspReferenceText                     = { reverse = true },
-    -- LspReferenceRead                     = { reverse = true },
-    -- LspReferenceWrite                    = { fg = colors.hue_6_2, reverse = true },
+    LspReferenceText = { reverse = true },
+    LspReferenceRead = { reverse = true },
+    LspReferenceWrite = { fg = colors.hue_6_2, reverse = true },
     LspSignatureActiveParameter = { fg = yellow, bold = true },
 
     -------------------------
     -- TreeSitter Refactor --
     -------------------------
-    ['@definition'] = { bg = colors.syntax_cursor },
-    ['@definition.usage'] = { bg = colors.syntax_cursor },
+    TSDefinition = { reverse = true },
+    TSDefinitionUsage = { reverse = true },
+    TSCurrentScope = { fg = colors.hue_6_2, reverse = true },
 
     -----------------------------
     -- TreeSitter Highlighting --
@@ -241,9 +242,10 @@ local highlights = {
     ['@function.builtin'] = { fg = colors.hue_2 },
     ['@function.macro'] = { fg = colors.hue_6_2 },
     ['@include'] = { fg = pink },
-    ['@keyword'] = { fg = colors.hue_5 },
+    ['@keyword'] = { fg = colors.hue_3 },
     ['@keyword.function'] = { fg = pink },
     ['@keyword.operator'] = { fg = colors.syntax_accent },
+    ['@keyword.return'] = { fg = pink, bold = true },
     ['@label'] = { fg = colors.hue_2 },
     ['@method'] = { fg = colors.hue_2 },
     ['@namespace'] = { fg = pink },
@@ -251,12 +253,12 @@ local highlights = {
     ['@number'] = { fg = colors.hue_6 },
     ['@operator'] = { fg = colors.syntax_accent },
     ['@parameter'] = { fg = colors.hue_5 },
-    ['@parameter.reference'] = { fg = colors.mono_1 },
+    ['@parameter.reference'] = { fg = colors.hue_5, italic = true },
     ['@property'] = { fg = colors.hue_5 },
     ['@punctuation.delimiter'] = { fg = colors.syntax_accent },
     ['@punctuation.bracket'] = { fg = colors.hue_2 },
     ['@punctuation.special'] = { fg = colors.mono_1 },
-    ['@repeat'] = { fg = pink },
+    ['@repeat'] = { fg = colors.syntax_accent },
     ['@string'] = { fg = colors.hue_4 },
     ['@string.escape'] = { fg = colors.mono_1 },
     ['@string.regex'] = { fg = colors.hue_4 },
@@ -279,6 +281,7 @@ local highlights = {
     ['@warning'] = { fg = colors.hue_6_2 }, -- new
     ['@danger'] = { fg = colors.hue_5 }, -- new
     ['@type'] = { fg = colors.hue_6_2 },
+    ['@type.definition'] = { fg = colors.hue_6_2 },
     ['@type.builtin'] = { fg = colors.hue_2 },
     ['@variable'] = { fg = colors.mono_1 },
     ['@variable.builtin'] = { fg = colors.hue_6_2 },
