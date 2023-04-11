@@ -286,6 +286,36 @@ local highlights = {
     ['@variable'] = { fg = colors.mono_1 },
     ['@variable.builtin'] = { fg = colors.hue_6_2 },
 
+    -------------------------
+    -- LSP Semantic Tokens --
+    -------------------------
+    ['@lsp.type.namespace'] = { link = '@namespace' },
+    ['@lsp.type.type'] = { link = '@type' },
+    ['@lsp.type.class'] = { link = '@type' },
+    ['@lsp.type.enum'] = { link = '@type' },
+    -- ['@lsp.type.interface'] = { link = '@type' },
+    ['@lsp.type.interface'] = { link = 'Identifier' },
+    ['@lsp.type.struct'] = { link = '@structure' },
+    -- ['@lsp.type.parameter'] = { link = '@parameter' },
+    ['@lsp.type.parameter'] = { link = '@parameter.reference' }, -- italic
+    -- ['@lsp.type.variable'] = { link = '@variable' },
+    ['@lsp.type.variable'] = {}, -- use TreeSitter styles for regular variables
+    ['@lsp.type.property'] = { link = '@property' },
+    ['@lsp.type.enumMember'] = { link = '@constant' },
+    ['@lsp.type.function'] = { link = '@function' },
+    ['@lsp.type.method'] = { link = '@method' },
+    ['@lsp.type.macro'] = { link = '@macro' },
+    ['@lsp.type.decorator'] = { link = '@function' },
+    ['@lsp.type.comment'] = { link = '@comment' },
+    ['@lsp.type.keyword'] = { link = '@keyword' },
+    ['@lsp.mod.deprecated'] = { strikethrough = true },
+    ['@lsp.typemod.method.defaultLibrary'] = { link = '@function.builtin' },
+    ['@lsp.typemod.function.defaultLibrary'] = { link = '@function.builtin' },
+    ['@lsp.typemod.operator.injected'] = { link = '@operator' },
+    ['@lsp.typemod.string.injected'] = { link = '@string' },
+    ['@lsp.typemod.variable.defaultLibrary'] = { link = '@variable.builtin' },
+    ['@lsp.typemod.variable.injected'] = { link = '@variable' },
+
     ---------------
     -- Lightbulb --
     ---------------
