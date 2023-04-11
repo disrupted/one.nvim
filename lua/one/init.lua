@@ -309,11 +309,16 @@ local highlights = {
     ['@lsp.type.comment'] = { link = '@comment' },
     ['@lsp.type.keyword'] = { link = '@keyword' },
     ['@lsp.mod.deprecated'] = { strikethrough = true },
-    ['@lsp.typemod.method.defaultLibrary'] = { link = '@function.builtin' },
+    ['@lsp.mod.readonly'] = { link = '@constant' },
+    ['@lsp.mod.typeHint'] = { link = '@structure' },
+    ['@lsp.typemod.variable.global'] = { link = '@constant' },
+    ['@lsp.typemod.variable.static'] = { link = '@constant' },
+    ['@lsp.typemod.variable.defaultLibrary'] = { link = '@variable.builtin' },
+    ['@lsp.typemod.function.builtin'] = { link = '@function.builtin' },
     ['@lsp.typemod.function.defaultLibrary'] = { link = '@function.builtin' },
+    ['@lsp.typemod.method.defaultLibrary'] = { link = '@function.builtin' },
     ['@lsp.typemod.operator.injected'] = { link = '@operator' },
     ['@lsp.typemod.string.injected'] = { link = '@string' },
-    ['@lsp.typemod.variable.defaultLibrary'] = { link = '@variable.builtin' },
     ['@lsp.typemod.variable.injected'] = { link = '@variable' },
 
     ---------------
