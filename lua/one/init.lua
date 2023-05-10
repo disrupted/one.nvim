@@ -382,6 +382,14 @@ local highlights = {
         fg = colors.mono_2,
         bg = colors.syntax_cursor,
     },
+
+    -------------
+    -- Neotest --
+    -------------
+    NeotestPassed = { fg = colors.hue_4 },
+    NeotestFailed = { fg = colors.hue_5 },
+    NeotestRunning = { fg = colors.mono_1 },
+    NeotestSkipped = { fg = colors.mono_1 },
 }
 
 M.colorscheme = function()
