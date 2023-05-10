@@ -13,6 +13,7 @@ if vim.o.background == 'dark' then
         hue_2 = '#61afef',
         hue_3 = '#c678dd',
         hue_4 = '#98c379',
+        hue_4_2 = '#50a14f',
         hue_5 = '#e06c75',
         hue_5_2 = '#be5046',
         hue_6 = '#d19a66',
@@ -30,6 +31,10 @@ if vim.o.background == 'dark' then
         term_cyan = '#56b6c2',
         term_white = '#dcdfe4',
         term_8 = '#5d677a',
+        diff_add = '#2a3429',
+        diff_change = '#3a2d27',
+        diff_delete = '#3f2529',
+        diff_text = '#5b402e',
     }
 else
     -- light colors
@@ -59,6 +64,10 @@ else
         term_cyan = '#0997b3',
         term_white = '#eaeaea',
         term_8 = '#4f525e',
+        diff_add = '#98c379',
+        diff_change = '#e5c07b',
+        diff_delete = '#e06c75',
+        diff_text = '#d19a66',
     }
 end
 
@@ -162,18 +171,39 @@ local highlights = {
     Error = { fg = colors.hue_5, bg = colors.syntax_bg, bold = true },
     Todo = { fg = colors.hue_3 },
 
+    ------------
+    -- Notify --
+    ------------
+    NotifyINFOBorder = { fg = colors.hue_4 },
+    NotifyINFOTitle = { link = 'NotifyINFOBorder' },
+    NotifyINFOIcon = { link = 'NotifyINFOBorder' },
+    -- NotifyINFOBody = { link = 'NotifyINFOBorder' },
+    NotifyWARNBorder = { fg = colors.hue_6_2 },
+    NotifyWARNTitle = { link = 'NotifyWARNBorder' },
+    NotifyWARNIcon = { link = 'NotifyWARNBorder' },
+    -- NotifyWARNBody = { link = 'NotifyWARNBorder' },
+    NotifyERRORBorder = { fg = colors.hue_5 },
+    NotifyERRORTitle = { link = 'NotifyERRORBorder' },
+    NotifyERRORIcon = { link = 'NotifyERRORBorder' },
+    -- NotifyERRORBody = { link = 'NotifyERRORBorder' },
+    NotifyTRACEBorder = { fg = colors.mono_1 },
+    NotifyTRACETitle = { link = 'NotifyTRACEBorder' },
+    NotifyTRACEIcon = { link = 'NotifyTRACEBorder' },
+    -- NotifyTRACEBody = { link = 'NotifyTRACEBorder' },
+
     -----------------------
     -- Diff Highlighting --
     -----------------------
     GitSignsAdd = { fg = colors.hue_4, bg = colors.syntax_bg },
     GitSignsChange = { fg = colors.hue_6, bg = colors.syntax_bg },
     GitSignsDelete = { fg = colors.hue_5, bg = colors.syntax_bg },
-    DiffAdd = { bg = '#2a3429' },
-    DiffChange = { bg = '#3a2d27' },
-    -- DiffChange  = { bg = '#2a3429'},
-    DiffDelete = { bg = '#3f2529' },
-    DiffText = { bg = '#5b402e' },
-    -- DiffText    = { bg = '#3c5134'},
+    GitSignsStagedAdd = { fg = colors.hue_4_2, bg = colors.syntax_bg },
+    GitSignsStagedChange = { fg = colors.hue_6_2, bg = colors.syntax_bg },
+    GitSignsStagedDelete = { fg = colors.hue_5_2, bg = colors.syntax_bg },
+    DiffAdd = { bg = colors.diff_add },
+    DiffChange = { bg = colors.diff_change },
+    DiffDelete = { bg = colors.diff_delete },
+    DiffText = { bg = colors.diff_text },
     DiffAdded = { fg = colors.hue_4, bg = colors.syntax_bg },
     DiffFile = { fg = colors.hue_5, bg = colors.syntax_bg },
     DiffNewFile = { fg = colors.hue_4, bg = colors.syntax_bg },
@@ -296,8 +326,7 @@ local highlights = {
     -- ['@lsp.type.interface'] = { link = '@type' },
     ['@lsp.type.interface'] = { link = 'Identifier' },
     ['@lsp.type.struct'] = { link = '@structure' },
-    -- ['@lsp.type.parameter'] = { link = '@parameter' },
-    ['@lsp.type.parameter'] = { link = '@parameter.reference' }, -- italic
+    ['@lsp.type.parameter'] = { link = '@parameter' },
     -- ['@lsp.type.variable'] = { link = '@variable' },
     ['@lsp.type.variable'] = {}, -- use TreeSitter styles for regular variables
     ['@lsp.type.property'] = { link = '@property' },
@@ -321,6 +350,9 @@ local highlights = {
     ['@lsp.typemod.string.injected'] = { link = '@string' },
     ['@lsp.typemod.variable.injected'] = { link = '@variable' },
 
+    ['@lsp.type.parameter.python'] = { link = '@parameter.reference' }, -- italic
+    ['@lsp.mod.decorator.python'] = { link = '@function' },
+
     ---------------
     -- Lightbulb --
     ---------------
@@ -339,6 +371,9 @@ local highlights = {
     ------------
     -- Neogit --
     ------------
+    NeogitNotificationInfo = { link = 'NotifyINFOBorder' },
+    NeogitNotificationWarning = { link = 'NotifyWARNBorder' },
+    NeogitNotificationError = { link = 'NotifyERRORBorder' },
     NeogitDiffContextHighlight = { fg = colors.mono_1, bg = colors.syntax_bg },
     NeogitDiffAddHighlight = { fg = colors.hue_4, bg = '#2a3429' },
     NeogitDiffDeleteHighlight = { fg = colors.hue_5, bg = '#3f2629' },
