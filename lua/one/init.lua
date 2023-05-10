@@ -390,4 +390,6 @@ M.colorscheme = function()
     end
 end
 
+M.colors = colors
+
 return M
