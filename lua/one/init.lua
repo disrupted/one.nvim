@@ -243,6 +243,7 @@ local highlights = {
     LspReferenceRead = { bg = colors.special_grey },
     LspReferenceWrite = { fg = colors.hue_6_2, reverse = true },
     LspSignatureActiveParameter = { fg = yellow, bold = true },
+    LspInlayHint = { fg = colors.mono_3, bg = colors.syntax_cursor },
 
     -------------------------
     -- TreeSitter Refactor --
