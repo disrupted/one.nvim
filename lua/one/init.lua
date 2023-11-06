@@ -362,8 +362,8 @@ local highlights = {
     ---------------
     -- Telescope --
     ---------------
-    TelescopeSelection = { fg = colors.hue_2, bold = true }, -- selected item
-    TelescopeSelectionCaret = { fg = colors.hue_3 }, -- selection caret
+    TelescopeSelection = { fg = colors.hue_2, bold = true },
+    TelescopeSelectionCaret = { fg = colors.hue_3 },
     TelescopeBorder = { fg = colors.mono_2 },
     TelescopePromptBorder = { fg = colors.mono_1 },
     TelescopeMatching = { fg = colors.hue_6 },
@@ -391,6 +391,19 @@ local highlights = {
     NeotestFailed = { fg = colors.hue_5 },
     NeotestRunning = { fg = colors.mono_1 },
     NeotestSkipped = { fg = colors.mono_1 },
+    NeotestDir = { fg = colors.mono_1 },
+    NeotestFile = { fg = colors.mono_1 },
+    -- TODO
+    -- NeotestAdapterName = { fg = c.purple, fmt = 'bold' },
+    -- NeotestExpandMarker = colors.Grey,
+    -- NeotestFocused = { fmt = 'bold,italic' },
+    -- NeotestIndent = colors.Grey,
+    -- NeotestMarked = { fg = c.orange, fmt = 'bold' },
+    -- NeotestNamespace = colors.Blue,
+    -- NeotestWinSelect = { fg = c.cyan, fmt = 'bold' },
+    -- NeotestTarget = colors.Purple,
+    -- NeotestTest = colors.Fg,
+    -- NeotestUnknown = colors.LightGrey,
 }
 
 M.colorscheme = function()
