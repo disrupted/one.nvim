@@ -87,7 +87,8 @@ local highlights = {
     CursorLine = { bg = colors.syntax_cursor },
     Directory = { fg = colors.hue_2 },
     ErrorMsg = { fg = colors.hue_5, bg = colors.syntax_bg },
-    VertSplit = { fg = colors.syntax_cursor },
+    WinSeparator = { fg = colors.syntax_cursor },
+    VertSplit = { link = 'WinSeparator' }, -- deprecated
     Folded = { fg = colors.mono_3, bg = colors.syntax_bg },
     FoldColumn = { fg = colors.mono_3, bg = colors.syntax_cursor },
     IncSearch = { fg = colors.syntax_bg, bg = colors.hue_2 },
