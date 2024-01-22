@@ -116,6 +116,8 @@ local highlights = {
     TabLine = { fg = colors.mono_4 },
     TabLineFill = { fg = colors.mono_4 },
     TabLineSel = { fg = colors.mono_2, bold = true },
+    WinBar = { bg = colors.syntax_bg },
+    WinBarNC = { bg = colors.syntax_bg },
     Title = { fg = colors.mono_1, bold = true },
     Visual = { bg = colors.visual_grey },
     VisualNOS = { bg = colors.visual_grey },
