@@ -1,10 +1,13 @@
 local M = {}
 
-local colors = {}
+local colors = {
+    pink = '#d291e4',
+    yellow = '#ffcb43',
+}
 
 if vim.o.background == 'dark' then
     -- dark colors
-    colors = {
+    colors = vim.tbl_extend('error', colors, {
         mono_1 = '#abb2bf',
         mono_2 = '#828997',
         mono_3 = '#5c6370',
@@ -35,10 +38,10 @@ if vim.o.background == 'dark' then
         diff_change = '#3a2d27',
         diff_delete = '#3f2529',
         diff_text = '#5b402e',
-    }
+    })
 else
     -- light colors
-    colors = {
+    colors = vim.tbl_extend('error', colors, {
         mono_1 = '#494b53',
         mono_2 = '#696c77',
         mono_3 = '#a0a1a7',
@@ -68,11 +71,8 @@ else
         diff_change = '#e5c07b',
         diff_delete = '#e06c75',
         diff_text = '#d19a66',
-    }
+    })
 end
-
-local pink = '#d291e4'
-local yellow = '#ffcb43'
 
 local highlights = {
     -------------------------------------------------------------
@@ -220,30 +220,30 @@ local highlights = {
     -----------------------------
     --     LSP Highlighting    --
     -----------------------------
-    DiagnosticError = { fg = colors.hue_5 },
-    DiagnosticWarn = { fg = colors.hue_6_2 },
-    DiagnosticInfo = { fg = colors.hue_2 },
-    DiagnosticHint = { fg = colors.mono_1 },
-    DiagnosticVirtualTextError = { fg = colors.hue_5 },
-    DiagnosticVirtualTextWarn = { fg = colors.hue_6_2 },
-    DiagnosticVirtualTextInfo = { fg = colors.hue_2 },
-    DiagnosticVirtualTextHint = { fg = colors.mono_1 },
+    DiagnosticError = { link = '@comment.error' },
+    DiagnosticWarn = { link = '@comment.warning' },
+    DiagnosticInfo = { link = '@comment.info' },
+    DiagnosticHint = { link = '@comment.hint' },
+    DiagnosticVirtualTextError = { link = 'DiagnosticError' },
+    DiagnosticVirtualTextWarn = { link = 'DiagnosticWarn' },
+    DiagnosticVirtualTextInfo = { link = 'DiagnosticInfo' },
+    DiagnosticVirtualTextHint = { link = 'DiagnosticHint' },
     DiagnosticUnderlineError = { sp = colors.hue_5, undercurl = true },
     DiagnosticUnderlineWarn = { sp = colors.hue_6_2, undercurl = true },
     DiagnosticUnderlineInfo = { sp = colors.hue_2, undercurl = true },
     DiagnosticUnderlineHint = { sp = colors.mono_1, undercurl = true },
-    DiagnosticFloatingError = { fg = colors.hue_5 },
-    DiagnosticFloatingWarn = { fg = colors.hue_6_2 },
-    DiagnosticFloatingInfo = { fg = colors.hue_2 },
-    DiagnosticFloatingHint = { fg = colors.mono_1 },
-    DiagnosticSignError = { fg = colors.hue_5 },
-    DiagnosticSignWarn = { fg = colors.hue_6_2 },
-    DiagnosticSignInfo = { fg = colors.hue_2 },
-    DiagnosticSignHint = { fg = colors.mono_1 },
+    DiagnosticFloatingError = { link = 'DiagnosticError' },
+    DiagnosticFloatingWarn = { link = 'DiagnosticWarn' },
+    DiagnosticFloatingInfo = { link = 'DiagnosticInfo' },
+    DiagnosticFloatingHint = { link = 'DiagnosticHint' },
+    DiagnosticSignError = { link = 'DiagnosticError' },
+    DiagnosticSignWarn = { link = 'DiagnosticWarn' },
+    DiagnosticSignInfo = { link = 'DiagnosticInfo' },
+    DiagnosticSignHint = { link = 'DiagnosticHint' },
     LspReferenceText = { bg = colors.special_grey },
     LspReferenceRead = { bg = colors.special_grey },
     LspReferenceWrite = { fg = colors.hue_6_2, reverse = true },
-    LspSignatureActiveParameter = { fg = yellow, bold = true },
+    LspSignatureActiveParameter = { fg = colors.yellow, bold = true },
     LspInlayHint = { fg = colors.mono_3, bg = colors.syntax_cursor },
 
     -------------------------
@@ -261,67 +261,83 @@ local highlights = {
     ['@boolean'] = { fg = colors.hue_6 },
     ['@character'] = { fg = colors.hue_4 },
     ['@comment'] = { fg = colors.mono_3, italic = true },
-    ['@conditional'] = { fg = colors.hue_3 },
+    ['@comment.error'] = { fg = colors.hue_5 },
+    ['@comment.warning'] = { fg = colors.hue_6_2 },
+    ['@comment.info'] = { fg = colors.hue_2 },
+    ['@comment.hint'] = { fg = colors.mono_1 },
+    ['@comment.todo'] = { fg = colors.mono_3, italic = true },
+    ['@comment.todo.unchecked'] = { fg = colors.hue_5, italic = true },
+    ['@comment.todo.checked'] = { fg = colors.hue_4, italic = true },
     ['@constant'] = { fg = colors.hue_6 },
     ['@constant.builtin'] = { fg = colors.hue_6 },
     ['@constant.macro'] = { fg = colors.mono_1 },
     ['@constructor'] = { fg = colors.hue_2 },
-    ['@error'] = { fg = colors.hue_5 },
-    ['@exception'] = { fg = pink },
-    ['@field'] = { fg = colors.hue_5 },
-    ['@float'] = { fg = colors.hue_4 },
+    ['@diff.plus'] = { link = 'DiffAdd' }, -- new
+    ['@diff.minus'] = { link = 'DiffDelete' }, -- new
+    ['@diff.delta'] = { link = 'DiffChange' }, -- new
+    ['@number.float'] = { fg = colors.hue_4 },
     ['@function'] = { fg = colors.hue_2 },
     ['@function.builtin'] = { fg = colors.hue_2 },
     ['@function.macro'] = { fg = colors.hue_6_2 },
-    ['@include'] = { fg = pink },
     ['@keyword'] = { fg = colors.hue_3 },
-    ['@keyword.function'] = { fg = pink },
+    ['@keyword.function'] = { fg = colors.pink },
     ['@keyword.operator'] = { fg = colors.syntax_accent },
-    ['@keyword.return'] = { fg = pink, bold = true },
+    ['@keyword.return'] = { fg = colors.pink, bold = true },
+    ['@keyword.directive'] = { link = 'PreProc' }, -- new
+    ['@keyword.directive.define'] = { link = 'Define' }, -- new
+    ['@keyword.storage'] = { link = 'StorageClass' }, -- new
+    ['@keyword.conditional'] = { fg = colors.hue_3 },
+    ['@keyword.debug'] = {}, -- TODO new
+    ['@keyword.exception'] = { fg = colors.pink },
+    ['@keyword.import'] = { fg = colors.pink },
+    ['@keyword.repeat'] = { fg = colors.syntax_accent },
     ['@label'] = { fg = colors.hue_2 },
-    ['@method'] = { fg = colors.hue_2 },
-    ['@namespace'] = { fg = pink },
-    ['@none'] = { fg = colors.mono_1 }, -- new
+    ['@function.method'] = { fg = colors.hue_2 },
+    ['@function.method.call'] = { fg = colors.hue_2 }, -- new
+    ['@module'] = { fg = colors.pink }, -- aka namespace
+    ['@none'] = { fg = colors.mono_1 },
     ['@number'] = { fg = colors.hue_6 },
     ['@operator'] = { fg = colors.syntax_accent },
-    ['@parameter'] = { fg = colors.hue_5 },
     ['@parameter.reference'] = { fg = colors.hue_5, italic = true },
     ['@property'] = { fg = colors.hue_5 },
     ['@punctuation.delimiter'] = { fg = colors.syntax_accent },
     ['@punctuation.bracket'] = { fg = colors.hue_2 },
-    ['@punctuation.special'] = { fg = colors.mono_1 },
-    ['@repeat'] = { fg = colors.syntax_accent },
     ['@string'] = { fg = colors.hue_4 },
     ['@string.escape'] = { fg = colors.mono_1 },
-    ['@string.regex'] = { fg = colors.hue_4 },
-    ['@symbol'] = { fg = colors.hue_6_2 }, -- new
+    ['@string.regexp'] = { fg = colors.hue_4 },
+    ['@string.special.symbol'] = { fg = colors.hue_6_2 },
+    ['@string.special.url'] = { fg = colors.hue_6_2, underline = true },
     ['@tag'] = { fg = colors.hue_5 },
     ['@tag.delimiter'] = { fg = colors.mono_3 },
-    ['@text'] = { fg = colors.hue_6_2 },
-    ['@text.strong'] = { fg = colors.hue_6_2 },
-    ['@text.emphasis'] = { fg = colors.hue_6_2 },
-    ['@text.underline'] = { fg = colors.hue_6_2 },
-    ['@text.strike'] = { fg = colors.hue_6_2, strikethrough = true },
-    ['@text.title'] = { fg = colors.hue_6_2 },
-    ['@text.literal'] = { fg = colors.hue_6_2 },
-    ['@text.uri'] = { fg = colors.hue_6_2 },
-    ['@text.math'] = { fg = colors.hue_6_2 }, -- new
-    ['@text.reference'] = { fg = colors.hue_6_2 }, -- new
-    ['@text.environment'] = { fg = colors.hue_6_2 }, -- new
-    ['@text.environment.name'] = { fg = colors.hue_6_2 }, -- new
-    ['@note'] = { fg = colors.hue_2 }, -- new
-    ['@warning'] = { fg = colors.hue_6_2 }, -- new
-    ['@danger'] = { fg = colors.hue_5 }, -- new
+    ['@markup'] = { fg = colors.hue_6_2 },
+    ['@markup.strong'] = { fg = colors.hue_6_2, bold = true },
+    ['@markup.italic'] = { fg = colors.hue_6_2, italic = true },
+    ['@markup.underline'] = { fg = colors.hue_6_2, underline = true },
+    ['@markup.strikethrough'] = { fg = colors.hue_6_2, strikethrough = true },
+    ['@markup.heading'] = { fg = colors.hue_6_2, bold = true },
+    ['@markup.raw'] = { fg = colors.hue_6_2 },
+    ['@markup.math'] = { fg = colors.hue_6_2 },
+    ['@markup.list'] = { fg = colors.mono_1 },
+    ['@markup.link'] = { fg = colors.hue_6_2 },
+    ['@markup.link.url'] = { link = '@string.special.url' }, -- new
+    ['@markup.link.label'] = { fg = colors.hue_6_2 }, -- new
+    ['@markup.environment'] = { fg = colors.hue_6_2 },
+    ['@markup.environment.name'] = { fg = colors.hue_6_2 },
+    ['@note'] = { fg = colors.hue_2 },
+    ['@warning'] = { fg = colors.hue_6_2 },
+    ['@danger'] = { fg = colors.hue_5 },
     ['@type'] = { fg = colors.hue_6_2 },
     ['@type.definition'] = { fg = colors.hue_6_2 },
     ['@type.builtin'] = { fg = colors.hue_2 },
     ['@variable'] = { fg = colors.mono_1 },
     ['@variable.builtin'] = { fg = colors.hue_6_2 },
+    ['@variable.parameter'] = { fg = colors.hue_5 },
+    ['@variable.member'] = { fg = colors.hue_5 }, -- aka field
 
     -------------------------
     -- LSP Semantic Tokens --
     -------------------------
-    ['@lsp.type.namespace'] = { link = '@namespace' },
+    ['@lsp.type.namespace'] = { link = '@module' },
     ['@lsp.type.type'] = { link = '@type' },
     ['@lsp.type.class'] = { link = '@type' },
     ['@lsp.type.enum'] = { link = '@type' },
@@ -334,7 +350,7 @@ local highlights = {
     ['@lsp.type.property'] = { link = '@property' },
     ['@lsp.type.enumMember'] = { link = '@constant' },
     ['@lsp.type.function'] = { link = '@function' },
-    ['@lsp.type.method'] = { link = '@method' },
+    ['@lsp.type.method'] = { link = '@function.method' },
     ['@lsp.type.macro'] = { link = '@macro' },
     ['@lsp.type.decorator'] = { link = '@function' },
     ['@lsp.type.comment'] = { link = '@comment' },
@@ -358,7 +374,7 @@ local highlights = {
     ---------------
     -- Lightbulb --
     ---------------
-    LightBulb = { fg = yellow },
+    LightBulb = { fg = colors.yellow },
 
     ---------------
     -- Telescope --
