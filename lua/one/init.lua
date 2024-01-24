@@ -267,7 +267,8 @@ local highlights = {
     ['@comment.warning'] = { fg = colors.hue_6_2 },
     ['@comment.info'] = { fg = colors.hue_2 },
     ['@comment.hint'] = { fg = colors.mono_1 },
-    ['@comment.todo'] = { fg = colors.mono_3, italic = true },
+    ['@comment.note'] = { fg = colors.hue_2 },
+    ['@comment.todo'] = { fg = colors.hue_6_2, italic = true },
     ['@comment.todo.unchecked'] = { fg = colors.hue_5, italic = true },
     ['@comment.todo.checked'] = { fg = colors.hue_4, italic = true },
     ['@constant'] = { fg = colors.hue_6 },
@@ -325,7 +326,6 @@ local highlights = {
     ['@markup.link.label'] = { fg = colors.hue_6_2 }, -- new
     ['@markup.environment'] = { fg = colors.hue_6_2 },
     ['@markup.environment.name'] = { fg = colors.hue_6_2 },
-    ['@note'] = { fg = colors.hue_2 },
     ['@warning'] = { fg = colors.hue_6_2 },
     ['@danger'] = { fg = colors.hue_5 },
     ['@type'] = { fg = colors.hue_6_2 },
