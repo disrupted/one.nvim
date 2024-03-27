@@ -74,6 +74,3 @@ M.get = function()
     return vim.o.background == 'light' and variants.light or variants.dark
 end
 return M
-
--- TODO
--- return vim.o.background == 'light' and variants.light or variants.dark
