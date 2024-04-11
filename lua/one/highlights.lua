@@ -361,6 +361,39 @@ M.get_highlights = function(colors)
         -- NeotestTarget = colors.Purple,
         -- NeotestTest = colors.Fg,
         -- NeotestUnknown = colors.LightGrey,
+
+        ------------
+        -- DAP UI --
+        ------------
+        DapUIVariable = { link = 'Normal' },
+        DapUIScope = { link = 'Special', bold = true },
+        DapUIType = { link = 'Type' },
+        DapUIValue = { link = 'Normal' },
+        DapUIModifiedValue = { link = 'Special', bold = true },
+        DapUIDecoration = { link = 'CursorLineNr' },
+        DapUIThread = { link = 'GitSignsAdd' }, --  link = 'Identifier'
+        DapUIStoppedThread = { link = 'Special' },
+        DapUIFrameName = { link = 'Normal' },
+        DapUISource = { link = 'Keyword' },
+        DapUILineNumber = { link = 'Normal' },
+        DapUIFloatBorder = { link = 'FloatBorder' },
+        DapUIWatchesEmpty = { link = 'Comment' },
+        DapUIWatchesValue = { link = 'GitSignsAdd' },
+        DapUIWatchesError = { link = 'DiagnosticError' },
+        DapUIBreakpointsPath = { link = 'Directory' },
+        DapUIBreakpointsInfo = { link = 'DiagnosticInfo' },
+        DapUIBreakpointsCurrentLine = { link = 'Identifier', bold = true },
+        DapUIBreakpointsLine = { link = 'DapUILineNumber' },
+        DapUIBreakpointsDisabledLine = { link = 'Comment' },
+        DapUICurrentFrameName = { link = 'DapUIBreakpointsCurrentLine' },
+        DapUIStepOver = { link = 'Normal' },
+        DapUIStepInto = { link = 'Normal' },
+        DapUIStepBack = { link = 'Normal' },
+        DapUIStepOut = { link = 'Normal' },
+        DapUIStop = { link = 'DiagnosticError' },
+        DapUIPlayPause = { link = 'GitSignsAdd' },
+        DapUIRestart = { link = 'DiagnosticInfo' },
+        DapUIUnavailable = { link = 'DiagnosticError' },
     }
     return highlights
 end
