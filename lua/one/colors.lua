@@ -34,6 +34,7 @@ local variants = {
         diff_change = '#eee1c7',
         diff_delete = '#efc8cb',
         diff_text = '#efdbc8',
+        debug_line = '#f2dfe0',
     }),
     dark = vim.tbl_extend('error', colors, {
         mono_1 = '#abb2bf',
@@ -66,6 +67,7 @@ local variants = {
         diff_change = '#3a2d27',
         diff_delete = '#3f2529',
         diff_text = '#5b402e',
+        debug_line = '#e0a9ad',
     }),
 }
 

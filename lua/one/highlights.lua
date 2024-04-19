@@ -183,6 +183,11 @@ M.get_highlights = function(colors)
         TSDefinitionUsage = { link = 'LspReferenceRead' },
         TSCurrentScope = { fg = colors.hue_6_2, reverse = true },
 
+        ------------------------
+        -- TreeSitter Context --
+        ------------------------
+        TreesitterContext = { link = 'CursorLine' },
+
         -----------------------------
         -- TreeSitter Highlighting --
         -----------------------------
@@ -361,6 +366,11 @@ M.get_highlights = function(colors)
         -- NeotestTarget = colors.Purple,
         -- NeotestTest = colors.Fg,
         -- NeotestUnknown = colors.LightGrey,
+
+        ---------
+        -- DAP --
+        ---------
+        debugPC = { bg = colors.debug_line }, -- DapStoppedLine
 
         ------------
         -- DAP UI --
