@@ -211,7 +211,6 @@ M.get_highlights = function(colors)
         ['@diff.plus'] = { link = 'DiffAdd' }, -- new
         ['@diff.minus'] = { link = 'DiffDelete' }, -- new
         ['@diff.delta'] = { link = 'DiffChange' }, -- new
-        ['@number.float'] = { fg = colors.hue_4 },
         ['@function'] = { fg = colors.hue_2 },
         ['@function.builtin'] = { fg = colors.hue_2 },
         ['@function.macro'] = { fg = colors.hue_6_2 },
@@ -233,6 +232,7 @@ M.get_highlights = function(colors)
         ['@module'] = { fg = colors.pink }, -- aka namespace
         ['@none'] = { fg = colors.mono_1 },
         ['@number'] = { fg = colors.hue_6 },
+        ['@number.float'] = { link = '@number' },
         ['@operator'] = { fg = colors.syntax_accent },
         ['@parameter.reference'] = { fg = colors.hue_5, italic = true },
         ['@property'] = { fg = colors.hue_5 },
