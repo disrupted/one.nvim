@@ -234,7 +234,7 @@ M.get_highlights = function(colors)
         ['@number'] = { fg = colors.hue_6 },
         ['@number.float'] = { link = '@number' },
         ['@operator'] = { fg = colors.syntax_accent },
-        ['@parameter.reference'] = { fg = colors.hue_5, italic = true },
+        ['@parameter.reference'] = { italic = true },
         ['@property'] = { fg = colors.hue_5 },
         ['@punctuation.delimiter'] = { fg = colors.syntax_accent },
         ['@punctuation.bracket'] = { fg = colors.hue_2 },
