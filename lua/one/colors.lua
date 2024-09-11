@@ -67,7 +67,7 @@ local variants = {
         diff_change = '#3a2d27',
         diff_delete = '#3f2529',
         diff_text = '#5b402e',
-        debug_line = '#e0a9ad',
+        debug_line = '#663a3f',
     }),
 }
 
