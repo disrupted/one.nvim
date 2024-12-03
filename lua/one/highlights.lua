@@ -229,7 +229,7 @@ M.get_highlights = function(colors)
         ['@label'] = { fg = colors.hue_2 },
         ['@function.method'] = { fg = colors.hue_2 },
         ['@function.method.call'] = { fg = colors.hue_2 }, -- new
-        ['@module'] = { fg = colors.pink }, -- aka namespace
+        ['@module'] = { fg = colors.mono_1, italic = true }, -- aka namespace
         ['@none'] = { fg = colors.mono_1 },
         ['@number'] = { fg = colors.hue_6 },
         ['@number.float'] = { link = '@number' },
