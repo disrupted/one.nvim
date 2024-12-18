@@ -404,6 +404,8 @@ M.get_highlights = function(colors)
         DapUIPlayPause = { link = 'GitSignsAdd' },
         DapUIRestart = { link = 'DiagnosticInfo' },
         DapUIUnavailable = { link = 'DiagnosticError' },
+
+        Hidden = { fg = colors.syntax_bg }, -- e.g. first indent line
     }
     return highlights
 end
