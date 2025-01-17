@@ -437,6 +437,12 @@ M.get_highlights = function(colors)
 
         Hidden = { fg = colors.syntax_bg }, -- e.g. first indent line
 
+        -----------
+        -- Noice --
+        -----------
+        NoiceVirtualText = { link = 'NormalFloat' },
+        NoiceCmdlinePopupBorder = { link = 'NormalFloat' },
+
         -------------
         -- NeoTree --
         -------------
