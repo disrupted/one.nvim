@@ -126,27 +126,27 @@ M.get_highlights = function(colors)
         NotifyERRORIcon = { link = 'NotifyERRORBorder' },
         -- NotifyERRORBody = { link = 'NotifyERRORBorder' },
 
-        SnacksNotifierTrace = { link = 'NotifyTRACEBorder' },
+        -- SnacksNotifierTrace = { link = 'NotifyTRACEBorder' },
         SnacksNotifierIconTrace = { link = 'NotifyTRACEBorder' },
         SnacksNotifierTitleTrace = { link = 'NotifyTRACEBorder' },
         SnacksNotifierBorderTrace = { link = 'NotifyTRACEBorder' },
         SnacksNotifierFooterTrace = { link = 'NotifyTRACEBorder' },
-        SnacksNotifierDebug = { link = 'NotifyDEBUGBorder' },
+        -- SnacksNotifierDebug = { link = 'NotifyDEBUGBorder' },
         SnacksNotifierIconDebug = { link = 'NotifyDEBUGBorder' },
         SnacksNotifierTitleDebug = { link = 'NotifyDEBUGBorder' },
         SnacksNotifierBorderDebug = { link = 'NotifyDEBUGBorder' },
         SnacksNotifierFooterDebug = { link = 'NotifyDEBUGBorder' },
-        SnacksNotifierInfo = { link = 'NotifyINFOBorder' },
+        -- SnacksNotifierInfo = { link = 'NotifyINFOBorder' },
         SnacksNotifierIconInfo = { link = 'NotifyINFOBorder' },
         SnacksNotifierTitleInfo = { link = 'NotifyINFOBorder' },
         SnacksNotifierBorderInfo = { link = 'NotifyINFOBorder' },
         SnacksNotifierFooterInfo = { link = 'NotifyINFOBorder' },
-        SnacksNotifierWarn = { link = 'NotifyWARNBorder' },
+        -- SnacksNotifierWarn = { link = 'NotifyWARNBorder' },
         SnacksNotifierIconWarn = { link = 'NotifyWARNBorder' },
         SnacksNotifierTitleWarn = { link = 'NotifyWARNBorder' },
         SnacksNotifierBorderWarn = { link = 'NotifyWARNBorder' },
         SnacksNotifierFooterWarn = { link = 'NotifyWARNBorder' },
-        SnacksNotifierError = { link = 'NotifyERRORBorder' },
+        -- SnacksNotifierError = { link = 'NotifyERRORBorder' },
         SnacksNotifierIconError = { link = 'NotifyERRORBorder' },
         SnacksNotifierTitleError = { link = 'NotifyERRORBorder' },
         SnacksNotifierBorderError = { link = 'NotifyERRORBorder' },
@@ -436,6 +436,11 @@ M.get_highlights = function(colors)
         DapUIUnavailable = { link = 'DiagnosticError' },
 
         Hidden = { fg = colors.syntax_bg }, -- e.g. first indent line
+
+        -------------
+        -- NeoTree --
+        -------------
+        NeoTreeRootName = { bold = true },
     }
     return highlights
 end
