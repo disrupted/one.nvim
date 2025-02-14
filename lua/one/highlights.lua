@@ -54,7 +54,7 @@ M.get_highlights = function(colors)
         TooLong = { fg = colors.hue_5 },
         WildMenu = { fg = colors.mono_1, bg = colors.mono_3 },
         SignColumn = { bg = colors.syntax_bg },
-        Special = { fg = colors.hue_2 },
+        Special = { fg = colors.syntax_accent },
         NormalFloat = { fg = colors.mono_1 },
         FloatBorder = { fg = colors.mono_2 },
 
@@ -70,7 +70,7 @@ M.get_highlights = function(colors)
         -- Standard Syntax Highlighting --
         ----------------------------------
         Comment = { fg = colors.mono_3, italic = true },
-        Constant = { fg = colors.hue_4 },
+        Constant = { fg = colors.hue_6 },
         String = { fg = colors.hue_4 },
         Character = { fg = colors.hue_4 },
         Number = { fg = colors.hue_6 },
@@ -94,10 +94,10 @@ M.get_highlights = function(colors)
         StorageClass = { fg = colors.hue_6_2 },
         Structure = { fg = colors.hue_6_2 },
         Typedef = { fg = colors.hue_6_2 },
-        -- SpecialChar = NONE,
-        -- Tag = NONE,
-        -- Delimiter = NONE,
-        -- Debug = NONE,
+        SpecialChar = { link = 'Special' },
+        Tag = { link = 'Special' },
+        Delimiter = { link = 'Special' },
+        Debug = { fg = colors.hue_3 },
         Underlined = { underline = true },
         -- Ignore = NONE,
         Error = { fg = colors.hue_5, bg = colors.syntax_bg, bold = true },
@@ -172,7 +172,9 @@ M.get_highlights = function(colors)
         DiffLine = { fg = colors.hue_2, bg = colors.syntax_bg },
         DiffRemoved = { fg = colors.hue_5, bg = colors.syntax_bg },
 
-        -- Spelling
+        --------------
+        -- Spelling --
+        --------------
         SpellBad = { fg = colors.mono_3, undercurl = true },
         SpellLocal = { fg = colors.mono_3, undercurl = true },
         SpellCap = { fg = colors.mono_3, undercurl = true },
@@ -185,27 +187,35 @@ M.get_highlights = function(colors)
         DiagnosticWarn = { link = '@comment.warning' },
         DiagnosticInfo = { link = '@comment.info' },
         DiagnosticHint = { link = '@comment.hint' },
+        DiagnosticOk = { fg = colors.hue_4 },
+        DiagnosticDeprecated = { strikethrough = true },
+        DiagnosticUnnecessary = { link = 'Comment' },
         DiagnosticVirtualTextError = { link = 'DiagnosticError' },
         DiagnosticVirtualTextWarn = { link = 'DiagnosticWarn' },
         DiagnosticVirtualTextInfo = { link = 'DiagnosticInfo' },
         DiagnosticVirtualTextHint = { link = 'DiagnosticHint' },
+        DiagnosticVirtualTextOk = { link = 'DiagnosticOk' },
         DiagnosticUnderlineError = { sp = colors.hue_5, undercurl = true },
         DiagnosticUnderlineWarn = { sp = colors.hue_6_2, undercurl = true },
         DiagnosticUnderlineInfo = { sp = colors.hue_2, undercurl = true },
         DiagnosticUnderlineHint = { sp = colors.mono_1, undercurl = true },
+        DiagnosticUnderlineOk = { sp = colors.hue_4, underdotted = true },
         DiagnosticFloatingError = { link = 'DiagnosticError' },
         DiagnosticFloatingWarn = { link = 'DiagnosticWarn' },
         DiagnosticFloatingInfo = { link = 'DiagnosticInfo' },
         DiagnosticFloatingHint = { link = 'DiagnosticHint' },
+        DiagnosticFloatingOk = { link = 'DiagnosticOk' },
         DiagnosticSignError = { link = 'DiagnosticError' },
         DiagnosticSignWarn = { link = 'DiagnosticWarn' },
         DiagnosticSignInfo = { link = 'DiagnosticInfo' },
         DiagnosticSignHint = { link = 'DiagnosticHint' },
+        DiagnosticSignOk = { link = 'DiagnosticOk' },
         LspReferenceText = { bg = colors.special_grey },
         LspReferenceRead = { bg = colors.special_grey },
         LspReferenceWrite = { fg = colors.hue_6_2, reverse = true },
         LspSignatureActiveParameter = { fg = colors.yellow, bold = true },
         LspInlayHint = { fg = colors.mono_3, bg = colors.syntax_cursor },
+        SnippetTabstop = { link = 'Visual' },
 
         -------------------------
         -- TreeSitter Refactor --
@@ -226,6 +236,7 @@ M.get_highlights = function(colors)
         ['@attribute'] = { fg = colors.mono_1 },
         ['@boolean'] = { fg = colors.hue_6 },
         ['@character'] = { fg = colors.hue_4 },
+        ['@character.special'] = { link = 'SpecialChar' },
         ['@comment'] = { fg = colors.mono_3, italic = true },
         ['@comment.error'] = { fg = colors.hue_5 },
         ['@comment.warning'] = { fg = colors.hue_6_2 },
@@ -236,12 +247,12 @@ M.get_highlights = function(colors)
         ['@comment.todo.unchecked'] = { fg = colors.hue_5, italic = true },
         ['@comment.todo.checked'] = { fg = colors.hue_4, italic = true },
         ['@constant'] = { fg = colors.hue_6 },
-        ['@constant.builtin'] = { fg = colors.hue_6 },
+        ['@constant.builtin'] = { link = '@constant' },
         ['@constant.macro'] = { fg = colors.mono_1 },
         ['@constructor'] = { fg = colors.hue_2 },
-        ['@diff.plus'] = { link = 'DiffAdd' }, -- new
-        ['@diff.minus'] = { link = 'DiffDelete' }, -- new
-        ['@diff.delta'] = { link = 'DiffChange' }, -- new
+        ['@diff.plus'] = { link = 'DiffAdd' },
+        ['@diff.minus'] = { link = 'DiffDelete' },
+        ['@diff.delta'] = { link = 'DiffChange' },
         ['@function'] = { fg = colors.hue_2 },
         ['@function.builtin'] = { fg = colors.hue_2 },
         ['@function.macro'] = { fg = colors.hue_6_2 },
@@ -249,17 +260,17 @@ M.get_highlights = function(colors)
         ['@keyword.function'] = { fg = colors.pink },
         ['@keyword.operator'] = { fg = colors.syntax_accent },
         ['@keyword.return'] = { fg = colors.pink, bold = true },
-        ['@keyword.directive'] = { link = 'PreProc' }, -- new
-        ['@keyword.directive.define'] = { link = 'Define' }, -- new
-        ['@keyword.storage'] = { link = 'StorageClass' }, -- new
+        ['@keyword.directive'] = { link = 'PreProc' },
+        ['@keyword.directive.define'] = { link = 'Define' },
+        ['@keyword.storage'] = { link = 'StorageClass' },
         ['@keyword.conditional'] = { fg = colors.hue_3 },
-        ['@keyword.debug'] = {}, -- TODO new
+        ['@keyword.debug'] = { link = 'Debug' },
         ['@keyword.exception'] = { fg = colors.pink },
         ['@keyword.import'] = { fg = colors.pink },
         ['@keyword.repeat'] = { fg = colors.syntax_accent },
         ['@label'] = { fg = colors.hue_2 },
         ['@function.method'] = { fg = colors.hue_2 },
-        ['@function.method.call'] = { fg = colors.hue_2 }, -- new
+        ['@function.method.call'] = { fg = colors.hue_2 },
         ['@module'] = { fg = colors.mono_1, italic = true }, -- aka namespace
         ['@none'] = { fg = colors.mono_1 },
         ['@number'] = { fg = colors.hue_6 },
@@ -272,27 +283,25 @@ M.get_highlights = function(colors)
         ['@string'] = { fg = colors.hue_4 },
         ['@string.escape'] = { fg = colors.mono_1 },
         ['@string.regexp'] = { fg = colors.hue_4 },
+        ['@string.special'] = { fg = colors.hue_6_2 },
         ['@string.special.symbol'] = { fg = colors.hue_6_2 },
-        ['@string.special.url'] = { fg = colors.hue_6_2, underline = true },
+        ['@string.special.url'] = { fg = colors.mono_2, underline = true },
         ['@tag'] = { fg = colors.hue_5 },
         ['@tag.delimiter'] = { fg = colors.mono_3 },
         ['@markup'] = { fg = colors.hue_6_2 },
-        ['@markup.strong'] = { fg = colors.hue_6_2, bold = true },
-        ['@markup.italic'] = { fg = colors.hue_6_2, italic = true },
-        ['@markup.underline'] = { fg = colors.hue_6_2, underline = true },
-        ['@markup.strikethrough'] = {
-            fg = colors.hue_6_2,
-            strikethrough = true,
-        },
+        ['@markup.strong'] = { bold = true },
+        ['@markup.italic'] = { italic = true },
+        ['@markup.underline'] = { underline = true },
+        ['@markup.strikethrough'] = { strikethrough = true },
         ['@markup.heading'] = { fg = colors.hue_6_2, bold = true },
-        ['@markup.raw'] = { fg = colors.hue_6_2 },
-        ['@markup.math'] = { fg = colors.hue_6_2 },
-        ['@markup.list'] = { fg = colors.mono_1 },
-        ['@markup.link'] = { fg = colors.hue_6_2 },
-        ['@markup.link.url'] = { link = '@string.special.url' }, -- new
-        ['@markup.link.label'] = { fg = colors.hue_6_2 }, -- new
-        ['@markup.environment'] = { fg = colors.hue_6_2 },
-        ['@markup.environment.name'] = { fg = colors.hue_6_2 },
+        ['@markup.raw'] = { fg = colors.markup_special },
+        ['@markup.math'] = {},
+        ['@markup.list'] = { fg = colors.markup_special },
+        ['@markup.link'] = {},
+        ['@markup.link.url'] = { link = '@string.special.url' },
+        ['@markup.link.label'] = { fg = colors.markup_special },
+        ['@markup.environment'] = {},
+        ['@markup.environment.name'] = {},
         ['@warning'] = { fg = colors.hue_6_2 },
         ['@danger'] = { fg = colors.hue_5 },
         ['@type'] = { fg = colors.hue_6_2 },
@@ -324,7 +333,7 @@ M.get_highlights = function(colors)
         ['@lsp.type.decorator'] = { link = '@function' },
         ['@lsp.type.comment'] = { link = '@comment' },
         ['@lsp.type.keyword'] = { link = '@keyword' },
-        ['@lsp.mod.deprecated'] = { strikethrough = true },
+        ['@lsp.mod.deprecated'] = { link = 'DiagnosticDeprecated' },
         ['@lsp.mod.readonly'] = { link = '@constant' },
         ['@lsp.mod.typeHint'] = { link = '@structure' },
         ['@lsp.typemod.variable.global'] = { link = '@constant' },
@@ -448,6 +457,38 @@ M.get_highlights = function(colors)
         -- NeoTree --
         -------------
         NeoTreeRootName = { bold = true },
+
+        ---------------
+        -- blink.cmp --
+        ---------------
+        BlinkCmpLabel = { fg = colors.mono_1 },
+        BlinkCmpLabelDeprecated = { link = 'DiagnosticDeprecated' },
+        BlinkCmpSource = { link = 'NonText' },
+        BlinkCmpKindText = { link = '@markup' },
+        BlinkCmpKindMethod = { link = '@lsp.type.method' },
+        BlinkCmpKindFunction = { link = '@lsp.type.function' },
+        BlinkCmpKindConstructor = { link = '@constructor' },
+        BlinkCmpKindField = { link = '@variable.member' },
+        BlinkCmpKindVariable = { link = '@variable' },
+        BlinkCmpKindClass = { link = '@lsp.type.class' },
+        BlinkCmpKindInterface = { link = '@lsp.type.interface' },
+        BlinkCmpKindModule = { link = '@module' },
+        BlinkCmpKindProperty = { link = '@property' },
+        BlinkCmpKindUnit = { link = '@number' },
+        BlinkCmpKindValue = { link = '@number' },
+        BlinkCmpKindEnum = { link = '@lsp.type.enum' },
+        BlinkCmpKindKeyword = { link = '@lsp.type.keyword' },
+        BlinkCmpKindSnippet = { link = '@markup' },
+        BlinkCmpKindColor = { link = '@number' },
+        BlinkCmpKindFile = { link = 'Directory' },
+        BlinkCmpKindReference = { link = '@parameter.reference' },
+        BlinkCmpKindFolder = { link = 'Directory' },
+        BlinkCmpKindEnumMember = { link = '@lsp.type.enumMember' },
+        BlinkCmpKindConstant = { link = '@constant' },
+        BlinkCmpKindStruct = { link = '@lsp.type.struct' },
+        BlinkCmpKindEvent = { link = '@constant' },
+        BlinkCmpKindOperator = { link = '@operator' },
+        BlinkCmpKindTypeParameter = { link = '@lsp.type.parameter' },
     }
     return highlights
 end
