@@ -493,8 +493,9 @@ M.get_highlights = function(colors)
         --------------------
         -- matchwith.nvim --
         --------------------
-        Matchwith = { bg = colors.syntax_cursor, underdashed = true },
-        Matchout = { link = 'Matchwith' },
+        Matchwith = { bg = colors.syntax_cursor },
+        MatchwithOut = { link = 'Matchwith' },
+        MatchwithSign = { link = 'SignColumn' },
     }
     return highlights
 end
