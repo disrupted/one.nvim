@@ -489,6 +489,12 @@ M.get_highlights = function(colors)
         BlinkCmpKindEvent = { link = '@constant' },
         BlinkCmpKindOperator = { link = '@operator' },
         BlinkCmpKindTypeParameter = { link = '@lsp.type.parameter' },
+
+        --------------------
+        -- matchwith.nvim --
+        --------------------
+        Matchwith = { bg = colors.syntax_cursor, underdashed = true },
+        Matchout = { link = 'Matchwith' },
     }
     return highlights
 end
