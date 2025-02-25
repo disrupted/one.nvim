@@ -36,6 +36,7 @@ M.get_highlights = function(colors)
         PmenuKind = { fg = colors.hue_2 },
         PmenuSbar = { bg = colors.syntax_bg },
         PmenuThumb = { bg = colors.mono_1 },
+        PmenuExtra = { fg = colors.mono_3 },
         Question = { fg = colors.hue_2 },
         Search = { fg = colors.syntax_bg, bg = colors.hue_6_2 },
         SpecialKey = { fg = colors.special_grey },
@@ -462,8 +463,10 @@ M.get_highlights = function(colors)
         -- blink.cmp --
         ---------------
         BlinkCmpLabel = { fg = colors.mono_1 },
+        BlinkCmpLabelDetail = { link = 'PmenuExtra' },
+        BlinkCmpLabelDescription = { link = 'PmenuExtra' },
         BlinkCmpLabelDeprecated = { link = 'DiagnosticDeprecated' },
-        BlinkCmpSource = { link = 'NonText' },
+        BlinkCmpSource = { link = 'PmenuExtra' },
         BlinkCmpKindText = { link = '@markup' },
         BlinkCmpKindMethod = { link = '@lsp.type.method' },
         BlinkCmpKindFunction = { link = '@lsp.type.function' },
