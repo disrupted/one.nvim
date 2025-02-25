@@ -12,15 +12,10 @@ Light theme
 
 ![light theme](assets/light.png)
 
-### Getting Started
+## Installation
 
-#### Packer
+example using [Lazy](https://github.com/folke/lazy.nvim) plugin manager
 
 ```lua
-use {
-    'disrupted/one.nvim',
-    config = function()
-        require('one').colorscheme()
-    end,
-}
+{ 'disrupted/one.nvim', config = true }
 ```

@@ -1,10 +1,6 @@
 local M = {}
 
----@alias Variant 'dark' | 'light'
----@param variant? Variant | 'auto'
-M.colorscheme = function(variant)
-    variant = variant or 'auto'
-
+M.setup = function()
     vim.opt.termguicolors = true
     if vim.g.colors_name then
         vim.cmd 'hi clear'

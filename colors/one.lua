@@ -1,1 +1,1 @@
-require('one').colorscheme()
+require('one').setup()
