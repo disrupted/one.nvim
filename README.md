@@ -1,14 +1,14 @@
-# One Neovim Theme
+# one.nvim
 
-An Atom One inspired dark and light colorscheme for Neovim.
+Atom One inspired colorscheme for Neovim.
 
 ## Screenshots
 
-Dark theme
+dark theme
 
 ![dark theme](assets/dark.png)
 
-Light theme
+light theme
 
 ![light theme](assets/light.png)
 
