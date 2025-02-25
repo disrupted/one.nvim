@@ -157,12 +157,12 @@ M.get_highlights = function(colors)
         -----------------------
         -- Diff Highlighting --
         -----------------------
-        GitSignsAdd = { fg = colors.hue_4, bg = colors.syntax_bg },
-        GitSignsChange = { fg = colors.hue_6, bg = colors.syntax_bg },
-        GitSignsDelete = { fg = colors.hue_5, bg = colors.syntax_bg },
-        GitSignsStagedAdd = { fg = colors.hue_4_2, bg = colors.syntax_bg },
-        GitSignsStagedChange = { fg = colors.hue_6, bg = colors.syntax_bg },
-        GitSignsStagedDelete = { fg = colors.hue_5_2, bg = colors.syntax_bg },
+        GitSignsAdd = { fg = colors.hue_4 },
+        GitSignsChange = { fg = colors.hue_6 },
+        GitSignsDelete = { fg = colors.hue_5 },
+        GitSignsStagedAdd = { fg = colors.hue_4_2 },
+        GitSignsStagedChange = { fg = colors.hue_6 },
+        GitSignsStagedDelete = { fg = colors.hue_5_2 },
         DiffAdd = { bg = colors.diff_add },
         DiffChange = { bg = colors.diff_change },
         DiffDelete = { bg = colors.diff_delete },
