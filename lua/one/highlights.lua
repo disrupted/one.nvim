@@ -499,6 +499,14 @@ M.get_highlights = function(colors)
         Matchwith = { bg = colors.syntax_cursor },
         MatchwithOut = { link = 'Matchwith' },
         MatchwithSign = { link = 'SignColumn' },
+
+        ---------------
+        -- Which Key --
+        ---------------
+        WhichKey = { link = '@markup.link.label' },
+        WhichKeyDesc = { link = 'Normal' },
+        WhichKeyGroup = { link = 'Directory' },
+        WhichKeyBorder = { fg = colors.mono_4 },
     }
     return highlights
 end
