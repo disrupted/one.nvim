@@ -507,6 +507,106 @@ M.get_highlights = function(colors)
         WhichKeyDesc = { link = 'Normal' },
         WhichKeyGroup = { link = 'Directory' },
         WhichKeyBorder = { fg = colors.mono_4 },
+
+        ---------------
+        -- Octo.nvim --
+        ---------------
+        OctoGreen = { fg = colors.hue_4 },
+        OctoRed = { fg = colors.hue_5_2 },
+        OctoPurple = { fg = colors.hue_3 },
+        OctoYellow = { fg = colors.yellow },
+        OctoBlue = { fg = colors.hue_2 },
+        OctoGrey = { fg = colors.mono_2 },
+
+        GreenFloat = { link = 'OctoGreen' },
+        RedFloat = { link = 'OctoRed' },
+        PurpleFloat = { link = 'OctoPurple' },
+        YellowFloat = { link = 'OctoYellow' },
+        BlueFloat = { link = 'OctoBlue' },
+        GreyFloat = { link = 'OctoGrey' },
+
+        BubbleGreen = { fg = colors.mono_2, bg = colors.hue_4 },
+        BubbleRed = { fg = colors.mono_2, bg = colors.hue_5_2 },
+        BubblePurple = { fg = colors.markup_special, bg = colors.hue_3 },
+        BubbleYellow = { fg = colors.mono_2, bg = colors.yellow },
+        BubbleBlue = { fg = colors.mono_2, bg = colors.hue_2 },
+        BubbleGrey = { fg = colors.markup_special, bg = colors.mono_2 },
+
+        BubbleDelimiterGreen = { link = 'OctoGreen' },
+        BubbleDelimiterRed = { link = 'OctoRed' },
+        BubbleDelimiterPurple = { link = 'OctoPurple' },
+        BubbleDelimiterYellow = { link = 'OctoYellow' },
+        BubbleDelimiterBlue = { link = 'OctoBlue' },
+        BubbleDelimiterGrey = { link = 'OctoGrey' },
+
+        -- OctoNormal	Normal
+        -- OctoCursorLine	CursorLine
+        -- OctoVertSplit	VertSplit
+        -- OctoSignColumn	Normal
+        -- OctoStatusColumn	SignColumn
+        -- OctoStatusLine	StatusLine
+        -- OctoStatusLineNC	StatusLineNC
+        -- OctoEndOfBuffer	EndOfBuffer
+        -- OctoFilePanelFileName	NormalFront
+        -- OctoFilePanelSelectedFile	Type
+        -- OctoFilePanelPath	Comment
+        -- OctoStatusAdded	OctoGreen
+        -- OctoStatusUntracked	OctoGreen
+        -- OctoStatusModified	OctoBlue
+        -- OctoStatusRenamed	OctoBlue
+        -- OctoStatusCopied	OctoBlue
+        -- OctoStatusTypeChange	OctoBlue
+        -- OctoStatusUnmerged	OctoBlue
+        -- OctoStatusUnknown	OctoYellow
+        -- OctoStatusDeleted	OctoRed
+        -- OctoStatusBroken	OctoRed
+        -- OctoDirty	OctoRed
+        -- OctoIssueId	NormalFloat
+        -- OctoIssueTitle	PreProc
+        -- OctoFloat	NormalFloat
+        -- OctoTimelineItemHeading	Comment
+        -- OctoTimelineMarker	Identifier
+        -- OctoSymbol	Comment
+        -- OctoDate	Comment
+        -- OctoDetailsLabel	Title
+        -- OctoDetailsValue	Identifier
+        -- OctoMissingDetails	Comment
+        -- OctoEmpty	NormalFloat
+        -- OctoBubble	NormalFloat
+        -- OctoUser	OctoBubble
+        -- OctoUserViewer	OctoViewer
+        -- OctoReaction	OctoBubble
+        -- OctoReactionViewer	OctoViewer
+        -- OctoPassingTest	OctoGreen
+        -- OctoFailingTest	OctoRed
+        -- OctoPullAdditions	OctoGreen
+        -- OctoPullDeletions	OctoRed
+        -- OctoPullModifications	OctoGrey
+        -- OctoStateOpen	OctoGreen
+        -- OctoStateClosed	OctoRed
+        -- OctoStateCompleted	OctoPurple
+        -- OctoStateNotPlanned	OctoGrey
+        -- OctoStateDraft	OctoGrey
+        -- OctoStateMerge	OctoPurple
+        -- OctoStatePending	OctoYellow
+        -- OctoStateApproved	OctoGreen
+        -- OctoStateChangesRequested	OctoRed
+        -- OctoStateDismissed	OctoRed
+        -- OctoStateCommented	OctoBlue
+        -- OctoStateSubmitted	OctoGreen
+        -- OctoStateOpenBubble	OctoBubbleGreen
+        -- OctoStateClosedBubble	OctoBubbleRed
+        -- OctoStateMergedBubble	OctoBubblePurple
+        -- OctoStatePendingBubble	OctoBubbleYellow
+        -- OctoStateApprovedBubble	OctoBubbleGreen
+        -- OctoStateChangesRequestedBubble	OctoBubbleRed
+        -- OctoStateDismissedBubble	OctoBubbleRed
+        -- OctoStateCommentedBubble	OctoBubbleBlue
+        -- OctoStateSubmittedBubble	OctoBubbleGreen
+        -- OctoStateOpenFloat	OctoGreenFloat
+        -- OctoStateClosedFloat	OctoRedFloat
+        -- OctoStateMergedFloat	OctoPurpleFloat
+        -- OctoStateDraftFloat	OctoGreyFloat
     }
     return highlights
 end
