@@ -507,6 +507,17 @@ M.get_highlights = function(colors)
         WhichKeyDesc = { link = 'Normal' },
         WhichKeyGroup = { link = 'Directory' },
         WhichKeyBorder = { fg = colors.mono_4 },
+
+        ---------
+        -- NUI --
+        ---------
+        NuiComponentsButton = { fg = colors.markup_special },
+        NuiComponentsButtonActive = { fg = colors.mono_3 },
+        NuiComponentsButtonFocus = { link = 'Search' },
+        -- NuiComponentsSelectOption = {},
+        NuiComponentsSelectOptionSelected = { fg = colors.hue_5 },
+        -- NuiComponentsSelectSeparator = {},
+        NuiComponentsSelectNodeFocused = { link = 'CursorLine' },
     }
     return highlights
 end
