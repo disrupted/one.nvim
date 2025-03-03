@@ -1,7 +1,7 @@
 local M = {}
 
 M.setup = function()
-    vim.opt.termguicolors = true
+    vim.g.termguicolors = true
     if vim.g.colors_name then
         vim.cmd 'hi clear'
         vim.cmd 'syntax reset'

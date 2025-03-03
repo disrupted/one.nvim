@@ -3,9 +3,9 @@ local M = {}
 M.get_highlights = function(colors)
     ---@type table<string, vim.api.keyset.highlight>
     local highlights = {
-        -------------------------------------------------------------
-        -- Syntax Groups (descriptions and ordering from `:h w18`) --
-        -------------------------------------------------------------
+        -------------------
+        -- Syntax Groups --
+        -------------------
         Normal = { fg = colors.mono_1, bg = colors.syntax_bg },
         ColorColumn = { bg = colors.syntax_cursor },
         Conceal = { fg = colors.mono_4, bg = colors.syntax_bg },
@@ -58,6 +58,7 @@ M.get_highlights = function(colors)
         Special = { fg = colors.syntax_accent },
         NormalFloat = { fg = colors.mono_1 },
         FloatBorder = { fg = colors.mono_2 },
+        QuickFixLine = { bg = colors.syntax_cursor },
 
         ---------------------------
         -- Vim Help Highlighting --
@@ -507,6 +508,17 @@ M.get_highlights = function(colors)
         WhichKeyDesc = { link = 'Normal' },
         WhichKeyGroup = { link = 'Directory' },
         WhichKeyBorder = { fg = colors.mono_4 },
+
+        ---------
+        -- NUI --
+        ---------
+        NuiComponentsButton = { fg = colors.markup_special },
+        NuiComponentsButtonActive = { fg = colors.mono_3 },
+        NuiComponentsButtonFocus = { link = 'Search' },
+        -- NuiComponentsSelectOption = {},
+        NuiComponentsSelectOptionSelected = { fg = colors.hue_5 },
+        -- NuiComponentsSelectSeparator = {},
+        NuiComponentsSelectNodeFocused = { link = 'CursorLine' },
 
         ---------------
         -- Octo.nvim --
