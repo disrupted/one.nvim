@@ -523,7 +523,7 @@ M.get_highlights = function(colors)
         ---------------
         -- Octo.nvim --
         ---------------
-        OctoGreen = { fg = colors.hue_4 },
+        OctoGreen = { fg = colors.hue_4_2 },
         OctoRed = { fg = colors.hue_5_2 },
         OctoPurple = { fg = colors.hue_3 },
         OctoYellow = { fg = colors.yellow },
@@ -551,74 +551,74 @@ M.get_highlights = function(colors)
         BubbleDelimiterBlue = { link = 'OctoBlue' },
         BubbleDelimiterGrey = { link = 'OctoGrey' },
 
-        -- OctoNormal	Normal
-        -- OctoCursorLine	CursorLine
-        -- OctoVertSplit	VertSplit
-        -- OctoSignColumn	Normal
-        -- OctoStatusColumn	SignColumn
-        -- OctoStatusLine	StatusLine
-        -- OctoStatusLineNC	StatusLineNC
-        -- OctoEndOfBuffer	EndOfBuffer
-        -- OctoFilePanelFileName	NormalFront
-        -- OctoFilePanelSelectedFile	Type
-        -- OctoFilePanelPath	Comment
-        -- OctoStatusAdded	OctoGreen
-        -- OctoStatusUntracked	OctoGreen
-        -- OctoStatusModified	OctoBlue
-        -- OctoStatusRenamed	OctoBlue
-        -- OctoStatusCopied	OctoBlue
-        -- OctoStatusTypeChange	OctoBlue
-        -- OctoStatusUnmerged	OctoBlue
-        -- OctoStatusUnknown	OctoYellow
-        -- OctoStatusDeleted	OctoRed
-        -- OctoStatusBroken	OctoRed
-        -- OctoDirty	OctoRed
-        -- OctoIssueId	NormalFloat
-        -- OctoIssueTitle	PreProc
-        -- OctoFloat	NormalFloat
-        -- OctoTimelineItemHeading	Comment
-        -- OctoTimelineMarker	Identifier
-        -- OctoSymbol	Comment
-        -- OctoDate	Comment
-        -- OctoDetailsLabel	Title
-        -- OctoDetailsValue	Identifier
-        -- OctoMissingDetails	Comment
-        -- OctoEmpty	NormalFloat
-        -- OctoBubble	NormalFloat
-        -- OctoUser	OctoBubble
-        -- OctoUserViewer	OctoViewer
-        -- OctoReaction	OctoBubble
-        -- OctoReactionViewer	OctoViewer
-        -- OctoPassingTest	OctoGreen
-        -- OctoFailingTest	OctoRed
-        -- OctoPullAdditions	OctoGreen
-        -- OctoPullDeletions	OctoRed
-        -- OctoPullModifications	OctoGrey
-        -- OctoStateOpen	OctoGreen
-        -- OctoStateClosed	OctoRed
-        -- OctoStateCompleted	OctoPurple
-        -- OctoStateNotPlanned	OctoGrey
-        -- OctoStateDraft	OctoGrey
-        -- OctoStateMerge	OctoPurple
-        -- OctoStatePending	OctoYellow
-        -- OctoStateApproved	OctoGreen
-        -- OctoStateChangesRequested	OctoRed
-        -- OctoStateDismissed	OctoRed
-        -- OctoStateCommented	OctoBlue
-        -- OctoStateSubmitted	OctoGreen
-        -- OctoStateOpenBubble	OctoBubbleGreen
-        -- OctoStateClosedBubble	OctoBubbleRed
-        -- OctoStateMergedBubble	OctoBubblePurple
-        -- OctoStatePendingBubble	OctoBubbleYellow
-        -- OctoStateApprovedBubble	OctoBubbleGreen
-        -- OctoStateChangesRequestedBubble	OctoBubbleRed
-        -- OctoStateDismissedBubble	OctoBubbleRed
-        -- OctoStateCommentedBubble	OctoBubbleBlue
-        -- OctoStateSubmittedBubble	OctoBubbleGreen
-        -- OctoStateOpenFloat	OctoGreenFloat
-        -- OctoStateClosedFloat	OctoRedFloat
-        -- OctoStateMergedFloat	OctoPurpleFloat
-        -- OctoStateDraftFloat	OctoGreyFloat
+        -- OctoNormal = { link = 'Normal' },
+        -- OctoCursorLine = { link = 'CursorLine' },
+        -- OctoVertSplit = { link = 'VertSplit' },
+        -- OctoSignColumn = { link = 'Normal' },
+        -- OctoStatusColumn = { link = 'SignColumn' },
+        -- OctoStatusLine = { link = 'StatusLine' },
+        -- OctoStatusLineNC = { link = 'StatusLineNC' },
+        -- OctoEndOfBuffer = { link = 'EndOfBuffer' },
+        -- OctoFilePanelFileName = { link = 'NormalFront' },
+        -- OctoFilePanelSelectedFile = { link = 'Type' },
+        -- OctoFilePanelPath = { link = 'Comment' },
+        -- OctoStatusAdded = { link = 'OctoGreen' },
+        -- OctoStatusUntracked = { link = 'OctoGreen' },
+        -- OctoStatusModified = { link = 'OctoBlue' },
+        -- OctoStatusRenamed = { link = 'OctoBlue' },
+        -- OctoStatusCopied = { link = 'OctoBlue' },
+        -- OctoStatusTypeChange = { link = 'OctoBlue' },
+        -- OctoStatusUnmerged = { link = 'OctoBlue' },
+        -- OctoStatusUnknown = { link = 'OctoYellow' },
+        -- OctoStatusDeleted = { link = 'OctoRed' },
+        -- OctoStatusBroken = { link = 'OctoRed' },
+        -- OctoDirty = { link = 'OctoRed' },
+        -- OctoIssueId = { link = 'NormalFloat' },
+        -- OctoIssueTitle = { link = 'PreProc' },
+        -- OctoFloat = { link = 'NormalFloat' },
+        -- OctoTimelineItemHeading = { link = 'Comment' },
+        -- OctoTimelineMarker = { link = 'Identifier' },
+        -- OctoSymbol = { link = 'Comment' },
+        -- OctoDate = { link = 'Comment' },
+        -- OctoDetailsLabel = { link = 'Title' },
+        -- OctoDetailsValue = { link = 'Identifier' },
+        -- OctoMissingDetails = { link = 'Comment' },
+        -- OctoEmpty = { link = 'NormalFloat' },
+        -- OctoBubble = { link = 'NormalFloat' },
+        -- OctoUser = { link = 'OctoBubble' },
+        -- OctoUserViewer = { link = 'OctoViewer' },
+        -- OctoReaction = { link = 'OctoBubble' },
+        -- OctoReactionViewer = { link = 'OctoViewer' },
+        -- OctoPassingTest = { link = 'OctoGreen' },
+        -- OctoFailingTest = { link = 'OctoRed' },
+        -- OctoPullAdditions = { link = 'OctoGreen' },
+        -- OctoPullDeletions = { link = 'OctoRed' },
+        -- OctoPullModifications = { link = 'OctoGrey' },
+        -- OctoStateOpen = { link = 'OctoGreen' },
+        -- OctoStateClosed = { link = 'OctoRed' },
+        -- OctoStateCompleted = { link = 'OctoPurple' },
+        -- OctoStateNotPlanned = { link = 'OctoGrey' },
+        -- OctoStateDraft = { link = 'OctoGrey' },
+        -- OctoStateMerge = { link = 'OctoPurple' },
+        -- OctoStatePending = { link = 'OctoYellow' },
+        -- OctoStateApproved = { link = 'OctoGreen' },
+        -- OctoStateChangesRequested = { link = 'OctoRed' },
+        -- OctoStateDismissed = { link = 'OctoRed' },
+        -- OctoStateCommented = { link = 'OctoBlue' },
+        -- OctoStateSubmitted = { link = 'OctoGreen' },
+        -- OctoStateOpenBubble = { link = 'OctoBubbleGreen' },
+        -- OctoStateClosedBubble = { link = 'OctoBubbleRed' },
+        -- OctoStateMergedBubble = { link = 'OctoBubblePurple' },
+        -- OctoStatePendingBubble = { link = 'OctoBubbleYellow' },
+        -- OctoStateApprovedBubble = { link = 'OctoBubbleGreen' },
+        -- OctoStateChangesRequestedBubble = { link = 'OctoBubbleRed' },
+        -- OctoStateDismissedBubble = { link = 'OctoBubbleRed' },
+        -- OctoStateCommentedBubble = { link = 'OctoBubbleBlue' },
+        -- OctoStateSubmittedBubble = { link = 'OctoBubbleGreen' },
+        -- OctoStateOpenFloat = { link = 'OctoGreenFloat' },
+        -- OctoStateClosedFloat = { link = 'OctoRedFloat' },
+        -- OctoStateMergedFloat = { link = 'OctoPurpleFloat' },
+        -- OctoStateDraftFloat = { link = 'OctoGreyFloat' },
     }
     return highlights
 end
