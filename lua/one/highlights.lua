@@ -235,7 +235,8 @@ M.get_highlights = function(colors)
         -- TreeSitter Highlighting --
         -----------------------------
         ['@annotation'] = { fg = colors.hue_6 },
-        ['@attribute'] = { fg = colors.mono_1 },
+        ['@attribute'] = { link = '@function' },
+        ['@attribute.builtin'] = { link = '@function.builtin' },
         ['@boolean'] = { fg = colors.hue_6_2 },
         ['@character'] = { fg = colors.hue_4 },
         ['@character.special'] = { link = 'SpecialChar' },
@@ -251,7 +252,7 @@ M.get_highlights = function(colors)
         ['@constant'] = { fg = colors.hue_6_2 },
         ['@constant.builtin'] = { link = '@constant' },
         ['@constant.macro'] = { fg = colors.mono_1 },
-        ['@constructor'] = { fg = colors.hue_2 },
+        ['@constructor'] = { link = '@type' },
         ['@diff.plus'] = { link = 'DiffAdd' },
         ['@diff.minus'] = { link = 'DiffDelete' },
         ['@diff.delta'] = { link = 'DiffChange' },
