@@ -162,7 +162,7 @@ M.get_highlights = function(colors)
         GitSignsChange = { fg = colors.hue_6 },
         GitSignsDelete = { fg = colors.hue_5 },
         GitSignsStagedAdd = { fg = colors.hue_4_2 },
-        GitSignsStagedChange = { fg = colors.hue_6 },
+        GitSignsStagedChange = { fg = colors.hue_6_2 },
         GitSignsStagedDelete = { fg = colors.hue_5_2 },
         DiffAdd = { bg = colors.diff_add },
         DiffChange = { bg = colors.diff_change },
