@@ -321,8 +321,8 @@ M.get_highlights = function(colors)
         ['@lsp.type.type'] = { link = '@type' },
         ['@lsp.type.class'] = { link = '@type' },
         ['@lsp.type.enum'] = { link = '@type' },
-        ['@lsp.type.interface'] = { link = 'Identifier' }, --  link = '@type'
-        ['@lsp.type.struct'] = { link = '@structure' },
+        ['@lsp.type.interface'] = { link = 'Identifier' }, -- link = '@type'
+        ['@lsp.type.struct'] = { link = 'Structure' },
         ['@lsp.type.parameter'] = { italic = true },
         -- ['@lsp.type.variable'] = { link = '@variable' },
         ['@lsp.type.variable'] = {}, -- use TreeSitter styles for regular variables
@@ -336,7 +336,7 @@ M.get_highlights = function(colors)
         ['@lsp.type.keyword'] = { link = '@keyword' },
         ['@lsp.mod.deprecated'] = { link = 'DiagnosticDeprecated' },
         ['@lsp.mod.readonly'] = { link = '@constant' },
-        ['@lsp.mod.typeHint'] = { link = '@structure' },
+        ['@lsp.mod.typeHint'] = { link = 'Structure' },
         ['@lsp.typemod.variable.global'] = { link = '@constant' },
         ['@lsp.typemod.variable.static'] = { link = '@constant' },
         ['@lsp.typemod.variable.defaultLibrary'] = {
