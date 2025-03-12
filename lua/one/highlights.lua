@@ -279,7 +279,6 @@ M.get_highlights = function(colors)
         ['@number'] = { fg = colors.hue_6_2 },
         ['@number.float'] = { link = '@number' },
         ['@operator'] = { fg = colors.syntax_accent },
-        ['@parameter.reference'] = { italic = true },
         ['@property'] = { fg = colors.hue_5 },
         ['@punctuation.delimiter'] = { fg = colors.syntax_accent },
         ['@punctuation.bracket'] = { fg = colors.hue_2 },
@@ -312,7 +311,7 @@ M.get_highlights = function(colors)
         ['@type.builtin'] = { fg = colors.hue_2 },
         ['@variable'] = { fg = colors.mono_1 },
         ['@variable.builtin'] = { fg = colors.hue_6 },
-        ['@variable.parameter'] = { fg = colors.hue_5 },
+        ['@variable.parameter'] = { fg = colors.hue_5, italic = true },
         ['@variable.member'] = { fg = colors.hue_5 }, -- aka field
 
         -------------------------
@@ -322,10 +321,9 @@ M.get_highlights = function(colors)
         ['@lsp.type.type'] = { link = '@type' },
         ['@lsp.type.class'] = { link = '@type' },
         ['@lsp.type.enum'] = { link = '@type' },
-        -- ['@lsp.type.interface'] = { link = '@type' },
-        ['@lsp.type.interface'] = { link = 'Identifier' },
+        ['@lsp.type.interface'] = { link = 'Identifier' }, --  link = '@type'
         ['@lsp.type.struct'] = { link = '@structure' },
-        ['@lsp.type.parameter'] = { link = '@parameter' },
+        ['@lsp.type.parameter'] = { italic = true },
         -- ['@lsp.type.variable'] = { link = '@variable' },
         ['@lsp.type.variable'] = {}, -- use TreeSitter styles for regular variables
         ['@lsp.type.property'] = { link = '@property' },
@@ -353,8 +351,20 @@ M.get_highlights = function(colors)
         ['@lsp.typemod.string.injected'] = { link = '@string' },
         ['@lsp.typemod.variable.injected'] = { link = '@variable' },
 
-        ['@lsp.type.parameter.python'] = { link = '@parameter.reference' }, -- italic
+        ---------
+        -- Lua --
+        ---------
+        ['@constructor.lua'] = { link = '@type.builtin' }, -- table constructor
+
+        ------------
+        -- Python --
+        ------------
         ['@lsp.mod.decorator.python'] = { link = '@function' },
+        -- FIXME: this causes unwanted side effects, e.g. overwrites hl of `self` parameter
+        -- ['@lsp.typemod.parameter.definition.python'] = {
+        --     link = '@variable.parameter',
+        -- },
+        -- ['@lsp.type.parameter.python'] = { fg = colors.mono_1, italic = true },
 
         ---------------
         -- Lightbulb --
@@ -486,7 +496,7 @@ M.get_highlights = function(colors)
         BlinkCmpKindSnippet = { link = '@markup' },
         BlinkCmpKindColor = { link = '@number' },
         BlinkCmpKindFile = { link = 'Directory' },
-        BlinkCmpKindReference = { link = '@parameter.reference' },
+        BlinkCmpKindReference = { italic = true },
         BlinkCmpKindFolder = { link = 'Directory' },
         BlinkCmpKindEnumMember = { link = '@lsp.type.enumMember' },
         BlinkCmpKindConstant = { link = '@constant' },
