@@ -351,6 +351,14 @@ M.get_highlights = function(colors)
         ['@lsp.typemod.string.injected'] = { link = '@string' },
         ['@lsp.typemod.variable.injected'] = { link = '@variable' },
 
+        ------------
+        -- CUSTOM --
+        ------------
+        ['@variable.parameter.reference'] = {
+            fg = colors.mono_1,
+            italic = true,
+        },
+
         ---------
         -- Lua --
         ---------
@@ -360,11 +368,6 @@ M.get_highlights = function(colors)
         -- Python --
         ------------
         ['@lsp.mod.decorator.python'] = { link = '@function' },
-        -- FIXME: this causes unwanted side effects, e.g. overwrites hl of `self` parameter
-        -- ['@lsp.typemod.parameter.definition.python'] = {
-        --     link = '@variable.parameter',
-        -- },
-        -- ['@lsp.type.parameter.python'] = { fg = colors.mono_1, italic = true },
 
         ---------------
         -- Lightbulb --
