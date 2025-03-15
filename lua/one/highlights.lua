@@ -332,7 +332,7 @@ M.get_highlights = function(colors)
         ['@lsp.type.method'] = { link = '@function.method' },
         ['@lsp.type.macro'] = { link = '@macro' },
         ['@lsp.type.decorator'] = { link = '@function' },
-        ['@lsp.type.comment'] = { link = '@comment' },
+        ['@lsp.type.comment'] = {}, -- link = '@comment', use TreeSitter to highlight todo comments
         ['@lsp.type.keyword'] = { link = '@keyword' },
         ['@lsp.mod.deprecated'] = { link = 'DiagnosticDeprecated' },
         ['@lsp.mod.readonly'] = { link = '@constant' },
