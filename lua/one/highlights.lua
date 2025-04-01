@@ -173,6 +173,7 @@ M.get_highlights = function(colors)
         DiffNewFile = { fg = colors.hue_4, bg = colors.syntax_bg },
         DiffLine = { fg = colors.hue_2, bg = colors.syntax_bg },
         DiffRemoved = { fg = colors.hue_5, bg = colors.syntax_bg },
+        GitConflictAncestor = { bg = colors.diff_ancestor },
 
         --------------
         -- Spelling --
