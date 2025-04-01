@@ -369,6 +369,23 @@ M.get_highlights = function(colors)
         ------------
         ['@lsp.mod.decorator.python'] = { link = '@function' },
 
+        ---------
+        -- CSV --
+        ---------
+        ['@punctuation.delimiter.csv'] = { fg = colors.mono_3 },
+        CsvViewDelimiter = { link = '@punctuation.delimiter.csv' },
+        CsvViewHeaderLine = { bold = true },
+        CsvViewStickyHeaderSeparator = { fg = colors.mono_4 },
+        CsvViewCol0 = { fg = colors.hue_2 },
+        CsvViewCol1 = { fg = colors.hue_6 },
+        CsvViewCol2 = { fg = colors.hue_3 },
+        CsvViewCol3 = { fg = colors.hue_4 },
+        CsvViewCol4 = { fg = colors.hue_5 },
+        CsvViewCol5 = { fg = colors.hue_1 },
+        CsvViewCol6 = { fg = colors.hue_6_2 },
+        CsvViewCol7 = { fg = colors.hue_4_2 },
+        CsvViewCol8 = { fg = colors.hue_5_2 },
+
         ---------------
         -- Lightbulb --
         ---------------
