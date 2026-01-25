@@ -38,8 +38,7 @@ local variants = {
         diff_ancestor = '#d8b1e4',
         debug_line = '#f2dfe0',
         markup_special = '#232428',
-        panel = '#ededed',
-        -- panel = '#ececec',
+        panel = '#ececec',
     }),
     dark = vim.tbl_extend('error', colors, {
         mono_1 = '#abb2bf', -- light grey
@@ -75,8 +74,7 @@ local variants = {
         diff_ancestor = '#68217a',
         debug_line = '#663a3f',
         markup_special = '#d3dcec',
-        panel = '#23272b',
-        -- panel = '#22262a',
+        panel = '#22262a',
     }),
 }
 

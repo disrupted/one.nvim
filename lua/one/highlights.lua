@@ -610,6 +610,11 @@ M.get_highlights = function(colors)
         RenderMarkdownTableHead = { link = 'Normal' },
         RenderMarkdownChecked = { fg = colors.hue_4 },
         RenderMarkdownTodo = { fg = colors.hue_5 },
+        OpencodeWinSeparator = { fg = colors.syntax_cursor, bg = colors.panel },
+
+        -- TODO
+        -- SnacksWinSeparator = { fg = colors.syntax_bg, bg = colors.syntax_bg },
+        -- SnacksPicker = { bg = colors.panel },
     }
     return highlights
 end
