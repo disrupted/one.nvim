@@ -584,6 +584,32 @@ M.get_highlights = function(colors)
         BubbleDelimiterGrey = { link = 'OctoGrey' },
 
         OctoDetailsValue = { fg = colors.hue_1 },
+
+        --------------------------
+        -- opencode-native.nvim --
+        --------------------------
+        OpencodeBackground = { bg = colors.panel },
+        OpencodeNormal = { bg = colors.panel },
+        OpencodeSignColumn = { bg = colors.panel },
+        OpencodeBorder = { link = 'WinSeparator' },
+        OpencodeSessionDescription = { fg = colors.mono_3, bg = colors.panel },
+        OpencodeContextBar = { fg = colors.mono_3, bg = colors.panel },
+        OpencodeHint = { fg = colors.mono_3, bg = colors.panel },
+        OpencodeMessageRoleAssistant = { fg = colors.syntax_accent },
+        OpencodeMessageRoleUser = { fg = colors.hue_4 },
+        OpencodeInputLegend = {
+            fg = colors.syntax_accent,
+            bg = colors.panel,
+            bold = true,
+        },
+        OpencodeDiffAdd = { link = 'DiffAdd' },
+        OpencodeDiffDelete = { link = 'DiffDelete' },
+        OpencodeAgentPlan = { fg = colors.syntax_bg, bg = colors.hue_2 },
+        OpencodeAgentBuild = { fg = colors.syntax_bg, bg = colors.hue_6 },
+        OpencodeAgentCustom = { fg = colors.syntax_bg, bg = colors.hue_3 },
+        RenderMarkdownTableHead = { link = 'Normal' },
+        RenderMarkdownChecked = { fg = colors.hue_4 },
+        RenderMarkdownTodo = { fg = colors.hue_5 },
     }
     return highlights
 end
