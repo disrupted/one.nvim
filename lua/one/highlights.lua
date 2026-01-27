@@ -129,6 +129,9 @@ M.get_highlights = function(colors)
         NotifyERRORIcon = { link = 'NotifyERRORBorder' },
         -- NotifyERRORBody = { link = 'NotifyERRORBorder' },
 
+        -----------------
+        -- snacks.nvim --
+        -----------------
         -- SnacksNotifierTrace = { link = 'NotifyTRACEBorder' },
         SnacksNotifierIconTrace = { link = 'NotifyTRACEBorder' },
         SnacksNotifierTitleTrace = { link = 'NotifyTRACEBorder' },
@@ -154,6 +157,10 @@ M.get_highlights = function(colors)
         SnacksNotifierTitleError = { link = 'NotifyERRORBorder' },
         SnacksNotifierBorderError = { link = 'NotifyERRORBorder' },
         SnacksNotifierFooterError = { link = 'NotifyERRORBorder' },
+
+        -- Snacks Explorer
+        SnacksWinSeparator = { fg = colors.syntax_bg, bg = colors.syntax_bg },
+        SnacksPickerList = { bg = colors.panel },
 
         -----------------------
         -- Diff Highlighting --
@@ -611,10 +618,6 @@ M.get_highlights = function(colors)
         RenderMarkdownChecked = { fg = colors.hue_4 },
         RenderMarkdownTodo = { fg = colors.hue_5 },
         OpencodeWinSeparator = { fg = colors.syntax_cursor, bg = colors.panel },
-
-        -- TODO
-        -- SnacksWinSeparator = { fg = colors.syntax_bg, bg = colors.syntax_bg },
-        -- SnacksPicker = { bg = colors.panel },
     }
     return highlights
 end
