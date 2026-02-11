@@ -618,6 +618,14 @@ M.get_highlights = function(colors)
         RenderMarkdownChecked = { fg = colors.hue_4 },
         RenderMarkdownTodo = { fg = colors.hue_5 },
         OpencodeWinSeparator = { fg = colors.syntax_cursor, bg = colors.panel },
+
+        ---------------
+        -- edgy.nvim --
+        ---------------
+        EdgyNormal = { bg = colors.panel },
+        EdgyWinBar = { bg = colors.panel },
+        EdgyWinBarNC = { bg = colors.panel },
+        EdgyWinSeparator = { fg = colors.syntax_bg, bg = colors.syntax_bg },
     }
     return highlights
 end
