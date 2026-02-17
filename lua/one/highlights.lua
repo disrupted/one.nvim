@@ -430,23 +430,23 @@ M.get_highlights = function(colors)
         -------------
         -- Neotest --
         -------------
-        NeotestPassed = { fg = colors.hue_4 },
-        NeotestFailed = { fg = colors.hue_5 },
-        NeotestRunning = { fg = colors.mono_1 },
-        NeotestSkipped = { fg = colors.mono_1 },
-        NeotestDir = { fg = colors.mono_1 },
-        NeotestFile = { fg = colors.mono_1 },
-        -- TODO
-        -- NeotestAdapterName = { fg = c.purple, fmt = 'bold' },
-        -- NeotestExpandMarker = colors.Grey,
-        -- NeotestFocused = { fmt = 'bold,italic' },
-        -- NeotestIndent = colors.Grey,
-        -- NeotestMarked = { fg = c.orange, fmt = 'bold' },
-        -- NeotestNamespace = colors.Blue,
-        -- NeotestWinSelect = { fg = c.cyan, fmt = 'bold' },
-        -- NeotestTarget = colors.Purple,
-        -- NeotestTest = colors.Fg,
-        -- NeotestUnknown = colors.LightGrey,
+        NeotestPassed = { link = 'DiagnosticOk' },
+        NeotestFailed = { link = 'DiagnosticError' },
+        NeotestRunning = { link = 'DiagnosticHint' },
+        NeotestSkipped = { fg = colors.mono_2 },
+        NeotestTest = { fg = colors.mono_2 },
+        NeotestDir = { link = 'DiagnosticInfo' },
+        NeotestFile = { link = 'DiagnosticHint' },
+        NeotestAdapterName = { bold = true },
+        NeotestFocused = { link = 'CursorLine' },
+        NeotestIndent = { link = 'NonText' },
+        NeotestExpandMarker = { link = 'NonText' },
+        NeotestMarked = { fg = colors.hue_2 },
+        NeotestWatching = { fg = colors.hue_5 },
+        NeotestNamespace = { link = '@type' },
+        NeotestWinSelect = { link = 'Special' },
+        NeotestTarget = { fg = colors.hue_3 },
+        NeotestUnknown = { fg = colors.mono_2 },
 
         ---------
         -- DAP --
