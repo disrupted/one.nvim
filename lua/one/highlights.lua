@@ -159,7 +159,7 @@ M.get_highlights = function(colors)
         SnacksNotifierFooterError = { link = 'NotifyERRORBorder' },
 
         -- Snacks Explorer
-        SnacksWinSeparator = { fg = colors.syntax_bg, bg = colors.syntax_bg },
+        SnacksWinSeparator = { fg = colors.syntax_cursor, bg = colors.panel },
         SnacksPickerList = { bg = colors.panel },
 
         -----------------------
