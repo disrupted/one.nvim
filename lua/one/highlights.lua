@@ -180,7 +180,14 @@ M.get_highlights = function(colors)
         DiffNewFile = { fg = colors.hue_4, bg = colors.syntax_bg },
         DiffLine = { fg = colors.hue_2, bg = colors.syntax_bg },
         DiffRemoved = { fg = colors.hue_5, bg = colors.syntax_bg },
-        GitConflictAncestor = { bg = colors.diff_ancestor },
+
+        ----------------
+        -- diffs.nvim --
+        ----------------
+        DiffsConflictOurs = { bg = colors.diff_add },
+        DiffsConflictTheirs = { bg = colors.diff_change },
+        DiffsConflictBase = { bg = colors.diff_ancestor },
+        DiffsConflictMarker = { fg = colors.mono_3, bold = true },
 
         --------------
         -- Spelling --
