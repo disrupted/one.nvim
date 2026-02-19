@@ -8,16 +8,15 @@ M.get_highlights = function(colors)
         -------------------
         Normal = { fg = colors.mono_1, bg = colors.syntax_bg },
         ColorColumn = { bg = colors.syntax_cursor },
-        Conceal = { fg = colors.mono_4, bg = colors.syntax_bg },
+        Conceal = { fg = colors.mono_4 },
         Cursor = { bg = colors.syntax_accent },
         -- CursorIM = NONE,
         CursorColumn = { bg = colors.syntax_cursor },
         CursorLine = { bg = colors.syntax_cursor },
         Directory = { fg = colors.hue_2 },
-        ErrorMsg = { fg = colors.hue_5, bg = colors.syntax_bg },
+        ErrorMsg = { fg = colors.hue_5 },
         WinSeparator = { fg = colors.syntax_cursor },
-        VertSplit = { link = 'WinSeparator' }, -- deprecated
-        Folded = { fg = colors.mono_3, bg = colors.syntax_bg },
+        Folded = { fg = colors.mono_3 },
         FoldColumn = { fg = colors.mono_3, bg = colors.syntax_cursor },
         IncSearch = { fg = colors.syntax_bg, bg = colors.hue_2 },
         LineNr = { fg = colors.mono_4 },
@@ -34,7 +33,7 @@ M.get_highlights = function(colors)
         Pmenu = { bg = colors.pmenu },
         PmenuSel = { bg = colors.mono_4 },
         PmenuKind = { fg = colors.hue_2 },
-        PmenuSbar = { bg = colors.syntax_bg },
+        PmenuSbar = {},
         PmenuThumb = { bg = colors.mono_1 },
         PmenuExtra = { fg = colors.mono_3 },
         Question = { fg = colors.hue_2 },
@@ -46,18 +45,18 @@ M.get_highlights = function(colors)
         TabLine = { fg = colors.mono_4 },
         TabLineFill = { fg = colors.mono_4 },
         TabLineSel = { fg = colors.mono_2, bold = true },
-        WinBar = { bg = colors.syntax_bg },
-        WinBarNC = { bg = colors.syntax_bg },
+        WinBar = {},
+        WinBarNC = {},
         Title = { fg = colors.mono_1, bold = true },
         Visual = { bg = colors.visual_grey },
         VisualNOS = { bg = colors.visual_grey },
         WarningMsg = { fg = colors.hue_5 },
         TooLong = { fg = colors.hue_5 },
         WildMenu = { fg = colors.mono_1, bg = colors.mono_3 },
-        SignColumn = { bg = colors.syntax_bg },
+        SignColumn = {},
         Special = { fg = colors.syntax_accent },
         NormalFloat = { fg = colors.mono_1 },
-        FloatBorder = { fg = colors.mono_2 },
+        FloatBorder = { fg = colors.mono_3 },
         QuickFixLine = { bg = colors.syntax_cursor },
 
         ---------------------------
@@ -74,35 +73,25 @@ M.get_highlights = function(colors)
         Comment = { fg = colors.mono_3, italic = true },
         Constant = { fg = colors.hue_6_2 },
         String = { fg = colors.hue_4 },
-        Character = { fg = colors.hue_4 },
-        Number = { fg = colors.hue_6_2 },
-        Boolean = { fg = colors.hue_6_2 },
-        Float = { fg = colors.hue_6_2 },
         Identifier = { fg = colors.hue_5 },
         Function = { fg = colors.hue_2 },
         Statement = { fg = colors.hue_3 },
-        Conditional = { fg = colors.hue_3 },
-        Repeat = { fg = colors.hue_3 },
-        Label = { fg = colors.hue_3 },
         Operator = { fg = colors.syntax_accent },
         Keyword = { fg = colors.hue_5 },
-        Exception = { fg = colors.hue_3 },
         PreProc = { fg = colors.hue_6 },
         Include = { fg = colors.hue_2 },
         Define = { fg = colors.hue_3 },
         Macro = { fg = colors.hue_3 },
-        PreCondit = { fg = colors.hue_6 },
+
         Type = { fg = colors.hue_6 },
-        StorageClass = { fg = colors.hue_6 },
-        Structure = { fg = colors.hue_6 },
-        Typedef = { fg = colors.hue_6 },
+
         SpecialChar = { link = 'Special' },
         Tag = { link = 'Special' },
         Delimiter = { link = 'Special' },
         Debug = { fg = colors.hue_3 },
         Underlined = { underline = true },
         -- Ignore = NONE,
-        Error = { fg = colors.hue_5, bg = colors.syntax_bg, bold = true },
+        Error = { fg = colors.hue_5, bold = true },
         Todo = { fg = colors.hue_3 },
 
         ------------
@@ -158,10 +147,6 @@ M.get_highlights = function(colors)
         SnacksNotifierBorderError = { link = 'NotifyERRORBorder' },
         SnacksNotifierFooterError = { link = 'NotifyERRORBorder' },
 
-        -- Snacks Explorer
-        SnacksWinSeparator = { fg = colors.syntax_cursor, bg = colors.panel },
-        SnacksPickerList = { bg = colors.panel },
-
         -----------------------
         -- Diff Highlighting --
         -----------------------
@@ -175,11 +160,11 @@ M.get_highlights = function(colors)
         DiffChange = { bg = colors.diff_change },
         DiffDelete = { bg = colors.diff_delete },
         DiffText = { bg = colors.diff_text },
-        DiffAdded = { fg = colors.hue_4, bg = colors.syntax_bg },
-        DiffFile = { fg = colors.hue_5, bg = colors.syntax_bg },
-        DiffNewFile = { fg = colors.hue_4, bg = colors.syntax_bg },
-        DiffLine = { fg = colors.hue_2, bg = colors.syntax_bg },
-        DiffRemoved = { fg = colors.hue_5, bg = colors.syntax_bg },
+        DiffAdded = { fg = colors.hue_4 },
+        DiffFile = { fg = colors.hue_5 },
+        DiffNewFile = { fg = colors.hue_4 },
+        DiffLine = { fg = colors.hue_2 },
+        DiffRemoved = { fg = colors.hue_5 },
 
         ----------------
         -- diffs.nvim --
@@ -192,10 +177,10 @@ M.get_highlights = function(colors)
         --------------
         -- Spelling --
         --------------
-        SpellBad = { fg = colors.mono_3, undercurl = true },
-        SpellLocal = { fg = colors.mono_3, undercurl = true },
-        SpellCap = { fg = colors.mono_3, undercurl = true },
-        SpellRare = { fg = colors.mono_3, undercurl = true },
+        SpellBad = { sp = colors.hue_5, undercurl = true },
+        SpellLocal = { sp = colors.hue_4, undercurl = true },
+        SpellCap = { sp = colors.hue_2, undercurl = true },
+        SpellRare = { sp = colors.hue_6, undercurl = true },
 
         -----------------------------
         --     LSP Highlighting    --
@@ -207,26 +192,13 @@ M.get_highlights = function(colors)
         DiagnosticOk = { fg = colors.hue_4 },
         DiagnosticDeprecated = { strikethrough = true },
         DiagnosticUnnecessary = { link = 'Comment' },
-        DiagnosticVirtualTextError = { link = 'DiagnosticError' },
-        DiagnosticVirtualTextWarn = { link = 'DiagnosticWarn' },
-        DiagnosticVirtualTextInfo = { link = 'DiagnosticInfo' },
-        DiagnosticVirtualTextHint = { link = 'DiagnosticHint' },
-        DiagnosticVirtualTextOk = { link = 'DiagnosticOk' },
+
         DiagnosticUnderlineError = { sp = colors.hue_5, undercurl = true },
         DiagnosticUnderlineWarn = { sp = colors.hue_6, undercurl = true },
         DiagnosticUnderlineInfo = { sp = colors.hue_2, undercurl = true },
         DiagnosticUnderlineHint = { sp = colors.mono_1, undercurl = true },
         DiagnosticUnderlineOk = { sp = colors.hue_4, underdotted = true },
-        DiagnosticFloatingError = { link = 'DiagnosticError' },
-        DiagnosticFloatingWarn = { link = 'DiagnosticWarn' },
-        DiagnosticFloatingInfo = { link = 'DiagnosticInfo' },
-        DiagnosticFloatingHint = { link = 'DiagnosticHint' },
-        DiagnosticFloatingOk = { link = 'DiagnosticOk' },
-        DiagnosticSignError = { link = 'DiagnosticError' },
-        DiagnosticSignWarn = { link = 'DiagnosticWarn' },
-        DiagnosticSignInfo = { link = 'DiagnosticInfo' },
-        DiagnosticSignHint = { link = 'DiagnosticHint' },
-        DiagnosticSignOk = { link = 'DiagnosticOk' },
+
         LspReferenceText = { bg = colors.special_grey },
         LspReferenceRead = { bg = colors.special_grey },
         LspReferenceWrite = { fg = colors.hue_6, reverse = true },
@@ -272,7 +244,7 @@ M.get_highlights = function(colors)
         ['@diff.minus'] = { link = 'DiffDelete' },
         ['@diff.delta'] = { link = 'DiffChange' },
         ['@function'] = { fg = colors.hue_2 },
-        ['@function.builtin'] = { fg = colors.hue_2 },
+        ['@function.builtin'] = { link = '@function' },
         ['@function.macro'] = { fg = colors.hue_6 },
         ['@keyword'] = { fg = colors.hue_3 },
         ['@keyword.function'] = { fg = colors.pink },
@@ -281,16 +253,16 @@ M.get_highlights = function(colors)
         ['@keyword.directive'] = { link = 'PreProc' },
         ['@keyword.directive.define'] = { link = 'Define' },
         ['@keyword.storage'] = { link = 'StorageClass' },
-        ['@keyword.conditional'] = { fg = colors.hue_3 },
+        ['@keyword.conditional'] = { link = '@keyword' },
         ['@keyword.debug'] = { link = 'Debug' },
         ['@keyword.exception'] = { fg = colors.pink },
         ['@keyword.import'] = { fg = colors.pink },
         ['@keyword.repeat'] = { fg = colors.syntax_accent },
         ['@label'] = { fg = colors.hue_2 },
-        ['@function.method'] = { fg = colors.hue_2 },
-        ['@function.method.call'] = { fg = colors.hue_2 },
+        ['@function.method'] = { link = '@function' },
+        ['@function.method.call'] = { link = '@function' },
         ['@module'] = { fg = colors.mono_1, italic = true }, -- aka namespace
-        ['@none'] = { fg = colors.mono_1 },
+        ['@none'] = {},
         ['@number'] = { fg = colors.hue_6_2 },
         ['@number.float'] = { link = '@number' },
         ['@operator'] = { fg = colors.syntax_accent },
@@ -299,9 +271,9 @@ M.get_highlights = function(colors)
         ['@punctuation.bracket'] = { fg = colors.hue_2 },
         ['@string'] = { fg = colors.hue_4 },
         ['@string.escape'] = { fg = colors.mono_1 },
-        ['@string.regexp'] = { fg = colors.hue_4 },
+
         ['@string.special'] = { fg = colors.hue_6 },
-        ['@string.special.symbol'] = { fg = colors.hue_6 },
+
         ['@string.special.url'] = { fg = colors.mono_2, underline = true },
         ['@tag'] = { fg = colors.hue_5 },
         ['@tag.delimiter'] = { fg = colors.mono_3 },
@@ -322,7 +294,7 @@ M.get_highlights = function(colors)
         ['@warning'] = { fg = colors.hue_6 },
         ['@danger'] = { fg = colors.hue_5 },
         ['@type'] = { fg = colors.hue_6 },
-        ['@type.definition'] = { fg = colors.hue_6 },
+        ['@type.definition'] = { link = '@type' },
         ['@type.builtin'] = { fg = colors.hue_2 },
         ['@variable'] = { fg = colors.mono_1 },
         ['@variable.builtin'] = { fg = colors.hue_6 },
@@ -345,7 +317,7 @@ M.get_highlights = function(colors)
         ['@lsp.type.enumMember'] = { link = '@constant' },
         ['@lsp.type.function'] = { link = '@function' },
         ['@lsp.type.method'] = { link = '@function.method' },
-        ['@lsp.type.macro'] = { link = '@macro' },
+        ['@lsp.type.macro'] = { link = '@function.macro' },
         ['@lsp.type.decorator'] = { link = '@function' },
         ['@lsp.type.comment'] = {}, -- link = '@comment', use TreeSitter to highlight todo comments
         ['@lsp.type.keyword'] = { link = '@keyword' },
@@ -422,13 +394,13 @@ M.get_highlights = function(colors)
         NeogitNotificationInfo = { link = 'NotifyINFOBorder' },
         NeogitNotificationWarning = { link = 'NotifyWARNBorder' },
         NeogitNotificationError = { link = 'NotifyERRORBorder' },
-        NeogitDiffContextHighlight = {
-            fg = colors.mono_1,
-            bg = colors.syntax_bg,
+        NeogitDiffContextHighlight = { fg = colors.mono_1 },
+        NeogitDiffAddHighlight = { fg = colors.hue_4, bg = colors.diff_add },
+        NeogitDiffDeleteHighlight = {
+            fg = colors.hue_5,
+            bg = colors.diff_delete,
         },
-        NeogitDiffAddHighlight = { fg = colors.hue_4, bg = '#2a3429' },
-        NeogitDiffDeleteHighlight = { fg = colors.hue_5, bg = '#3f2629' },
-        NeogitHunkHeader = { fg = colors.mono_3, bg = colors.syntax_bg },
+        NeogitHunkHeader = { fg = colors.mono_3 },
         NeogitHunkHeaderHighlight = {
             fg = colors.mono_2,
             bg = colors.syntax_cursor,
@@ -633,6 +605,9 @@ M.get_highlights = function(colors)
         EdgyWinBar = { bg = colors.panel },
         EdgyWinBarNC = { bg = colors.panel },
         EdgyWinSeparator = { fg = colors.syntax_bg, bg = colors.syntax_bg },
+        -- Snacks Explorer
+        SnacksWinSeparator = { link = 'EdgyWinSeparator' },
+        SnacksPickerList = { link = 'EdgyNormal' },
     }
     return highlights
 end

@@ -1,10 +1,10 @@
 local colors = {
-    pink = '#d291e4',
     yellow = '#ffcb43',
 }
 
 local variants = {
     light = vim.tbl_extend('error', colors, {
+        pink = '#b0479e',
         mono_1 = '#494b53', -- dark grey
         mono_2 = '#696c77', -- medium grey
         mono_3 = '#a0a1a7', -- light grey
@@ -34,13 +34,14 @@ local variants = {
         diff_add = '#daf1cb',
         diff_change = '#eee1c7',
         diff_delete = '#efc8cb',
-        diff_text = '#efdbc8',
+        diff_text = '#e0c49a',
         diff_ancestor = '#d8b1e4',
         debug_line = '#f2dfe0',
         markup_special = '#232428',
         panel = '#ececec',
     }),
     dark = vim.tbl_extend('error', colors, {
+        pink = '#d291e4',
         mono_1 = '#abb2bf', -- light grey
         mono_2 = '#828997', -- medium grey
         mono_3 = '#5c6370', -- dark grey
@@ -70,8 +71,8 @@ local variants = {
         diff_add = '#2a3429',
         diff_change = '#3a2d27',
         diff_delete = '#3f2529',
-        diff_text = '#5b402e',
-        diff_ancestor = '#68217a',
+        diff_text = '#6e4f35',
+        diff_ancestor = '#5c2d72',
         debug_line = '#663a3f',
         markup_special = '#d3dcec',
         panel = '#22262a',
