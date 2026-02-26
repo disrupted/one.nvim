@@ -308,7 +308,7 @@ M.get_highlights = function(colors)
         ['@lsp.type.type'] = { link = '@type' },
         ['@lsp.type.class'] = { link = '@type' },
         ['@lsp.type.enum'] = { link = '@type' },
-        ['@lsp.type.interface'] = { link = 'Identifier' }, -- link = '@type'
+        ['@lsp.type.interface'] = { link = '@type' },
         ['@lsp.type.struct'] = { link = 'Structure' },
         ['@lsp.type.parameter'] = { italic = true },
         -- ['@lsp.type.variable'] = { link = '@variable' },
