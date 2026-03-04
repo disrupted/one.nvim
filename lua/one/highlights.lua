@@ -174,6 +174,11 @@ M.get_highlights = function(colors)
         DiffsConflictBase = { bg = colors.diff_ancestor },
         DiffsConflictMarker = { fg = colors.mono_3, bold = true },
 
+        -------------------
+        -- codediff.nvim --
+        -------------------
+        CodeDiffFiller = { link = 'Whitespace' },
+
         --------------
         -- Spelling --
         --------------
