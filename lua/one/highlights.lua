@@ -17,7 +17,7 @@ M.get_highlights = function(colors)
         ErrorMsg = { fg = colors.hue_5 },
         WinSeparator = { fg = colors.syntax_cursor },
         Folded = { fg = colors.mono_3 },
-        FoldColumn = { fg = colors.mono_3, bg = colors.syntax_cursor },
+        FoldColumn = { fg = colors.mono_3 },
         IncSearch = { fg = colors.syntax_bg, bg = colors.hue_2 },
         LineNr = { fg = colors.mono_4 },
         CursorLineNr = { fg = colors.mono_1 },
@@ -350,6 +350,7 @@ M.get_highlights = function(colors)
             fg = colors.mono_1,
             italic = true,
         },
+        ['@attribute.diff'] = { link = '@comment' },
 
         ---------
         -- Lua --
@@ -406,6 +407,7 @@ M.get_highlights = function(colors)
             bg = colors.diff_delete,
         },
         NeogitHunkHeader = { fg = colors.mono_3 },
+        -- NeogitHunkHeaderCursor = { fg = colors.mono_3 },
         NeogitHunkHeaderHighlight = {
             fg = colors.mono_2,
             bg = colors.syntax_cursor,
@@ -487,6 +489,7 @@ M.get_highlights = function(colors)
         -- blink.cmp --
         ---------------
         BlinkCmpLabel = { fg = colors.mono_1 },
+        BlinkCmpLabelMatch = { fg = colors.markup_special },
         BlinkCmpLabelDetail = { link = 'PmenuExtra' },
         BlinkCmpLabelDescription = { link = 'PmenuExtra' },
         BlinkCmpLabelDeprecated = { link = 'DiagnosticDeprecated' },
