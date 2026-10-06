@@ -616,6 +616,8 @@ M.get_highlights = function(colors)
         -- Snacks Explorer
         SnacksWinSeparator = { link = 'EdgyWinSeparator' },
         SnacksPickerList = { link = 'EdgyNormal' },
+        SnacksPickerDimmed = { fg = colors.mono_2 },
+        SnacksPickerGitMsg = { fg = colors.mono_1 },
     }
     return highlights
 end
