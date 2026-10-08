@@ -169,6 +169,15 @@ M.get_highlights = function(colors)
         ----------------
         -- diffs.nvim --
         ----------------
+        DiffsAddRailNr = { link = 'LineNr' },
+        DiffsDeleteRailNr = { link = 'LineNr' },
+        DiffsRailNr = { link = 'LineNr' },
+
+        OneDiffAddLine = { bg = colors.diff_add_line },
+        OneDiffDeleteLine = { bg = colors.diff_delete_line },
+        OneDiffAddText = { bg = colors.diff_add_text },
+        OneDiffDeleteText = { bg = colors.diff_delete_text },
+
         DiffsConflictOurs = { bg = colors.diff_add },
         DiffsConflictTheirs = { bg = colors.diff_change },
         DiffsConflictBase = { bg = colors.diff_ancestor },
@@ -351,6 +360,9 @@ M.get_highlights = function(colors)
             italic = true,
         },
         ['@attribute.diff'] = { link = '@comment' },
+        ['@function.diff'] = { link = '@comment' },
+        ['@keyword.diff'] = { link = '@comment' },
+        ['@constant.diff'] = { link = '@comment' },
 
         ---------
         -- Lua --
@@ -556,28 +568,31 @@ M.get_highlights = function(colors)
         OctoBlue = { fg = colors.hue_2 },
         OctoGrey = { fg = colors.mono_2 },
 
-        GreenFloat = { link = 'OctoGreen' },
-        RedFloat = { link = 'OctoRed' },
-        PurpleFloat = { link = 'OctoPurple' },
-        YellowFloat = { link = 'OctoYellow' },
-        BlueFloat = { link = 'OctoBlue' },
-        GreyFloat = { link = 'OctoGrey' },
+        OctoGreenFloat = { link = 'OctoGreen' },
+        OctoRedFloat = { link = 'OctoRed' },
+        OctoPurpleFloat = { link = 'OctoPurple' },
+        OctoYellowFloat = { link = 'OctoYellow' },
+        OctoBlueFloat = { link = 'OctoBlue' },
+        OctoGreyFloat = { link = 'OctoGrey' },
 
-        BubbleGreen = { fg = colors.mono_2, bg = colors.hue_4 },
-        BubbleRed = { fg = colors.mono_2, bg = colors.hue_5_2 },
-        BubblePurple = { fg = colors.markup_special, bg = colors.hue_3 },
-        BubbleYellow = { fg = colors.mono_2, bg = colors.yellow },
-        BubbleBlue = { fg = colors.mono_2, bg = colors.hue_2 },
-        BubbleGrey = { fg = colors.markup_special, bg = colors.mono_2 },
+        OctoBubbleGreen = { fg = colors.mono_2, bg = colors.hue_4 },
+        OctoBubbleRed = { fg = colors.mono_2, bg = colors.hue_5_2 },
+        OctoBubblePurple = { fg = colors.markup_special, bg = colors.hue_3 },
+        OctoBubbleYellow = { fg = colors.mono_2, bg = colors.yellow },
+        OctoBubbleBlue = { fg = colors.mono_2, bg = colors.hue_2 },
+        OctoBubbleGrey = { fg = colors.markup_special, bg = colors.mono_2 },
 
-        BubbleDelimiterGreen = { link = 'OctoGreen' },
-        BubbleDelimiterRed = { link = 'OctoRed' },
-        BubbleDelimiterPurple = { link = 'OctoPurple' },
-        BubbleDelimiterYellow = { link = 'OctoYellow' },
-        BubbleDelimiterBlue = { link = 'OctoBlue' },
-        BubbleDelimiterGrey = { link = 'OctoGrey' },
+        OctoBubbleDelimiterGreen = { link = 'OctoGreen' },
+        OctoBubbleDelimiterRed = { link = 'OctoRed' },
+        OctoBubbleDelimiterPurple = { link = 'OctoPurple' },
+        OctoBubbleDelimiterYellow = { link = 'OctoYellow' },
+        OctoBubbleDelimiterBlue = { link = 'OctoBlue' },
+        OctoBubbleDelimiterGrey = { link = 'OctoGrey' },
 
         OctoDetailsValue = { fg = colors.hue_1 },
+
+        OctoReviewDiffAddText = { link = 'OneDiffAddText' },
+        OctoReviewDiffDeleteText = { link = 'OneDiffDeleteText' },
 
         --------------------------
         -- opencode-native.nvim --

@@ -79,6 +79,48 @@ local variants = {
     }),
 }
 
+-- line-level diff: blend `hex` into `bg_hex` by `alpha`
+local function blend_hex(hex, bg_hex, alpha)
+    local function channels(value)
+        local n = tonumber((value:gsub('#', '')), 16)
+        return math.floor(n / 65536) % 256, math.floor(n / 256) % 256, n % 256
+    end
+
+    local r1, g1, b1 = channels(hex)
+    local r2, g2, b2 = channels(bg_hex)
+    return string.format(
+        '#%02x%02x%02x',
+        math.floor(r1 * alpha + r2 * (1 - alpha)),
+        math.floor(g1 * alpha + g2 * (1 - alpha)),
+        math.floor(b1 * alpha + b2 * (1 - alpha))
+    )
+end
+
+-- character-level diff: derive background from the line background
+local function scale_hex(hex, factor)
+    local n = tonumber((hex:gsub('#', '')), 16)
+    local r = math.min(255, math.floor((math.floor(n / 65536) % 256) * factor))
+    local g = math.min(255, math.floor((math.floor(n / 256) % 256) * factor))
+    local b = math.min(255, math.floor((n % 256) * factor))
+    return string.format('#%02x%02x%02x', r, g, b)
+end
+
+local diff_alpha = 0.6
+local char_brightness = {
+    light = 0.94,
+    dark = 1.4,
+}
+
+for mode, variant in pairs(variants) do
+    variant.diff_add_line =
+        blend_hex(variant.diff_add, variant.syntax_bg, diff_alpha)
+    variant.diff_delete_line =
+        blend_hex(variant.diff_delete, variant.syntax_bg, diff_alpha)
+    variant.diff_add_text = scale_hex(variant.diff_add, char_brightness[mode])
+    variant.diff_delete_text =
+        scale_hex(variant.diff_delete, char_brightness[mode])
+end
+
 local M = {}
 M.get = function()
     return vim.o.background == 'light' and variants.light or variants.dark
