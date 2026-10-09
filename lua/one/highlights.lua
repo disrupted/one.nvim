@@ -591,6 +591,8 @@ M.get_highlights = function(colors)
 
         OctoDetailsValue = { fg = colors.hue_1 },
 
+        OctoReviewDiffAdd = { link = 'DiffAdd' },
+        OctoReviewDiffDelete = { link = 'DiffDelete' },
         OctoReviewDiffAddText = { link = 'OneDiffAddText' },
         OctoReviewDiffDeleteText = { link = 'OneDiffDeleteText' },
 
