@@ -618,10 +618,11 @@ M.get_highlights = function(colors)
         OpencodeAgentPlan = { fg = colors.syntax_bg, bg = colors.hue_2 },
         OpencodeAgentBuild = { fg = colors.syntax_bg, bg = colors.hue_6 },
         OpencodeAgentCustom = { fg = colors.syntax_bg, bg = colors.hue_3 },
+        OpencodeWinSeparator = { fg = colors.syntax_cursor, bg = colors.panel },
+
         RenderMarkdownTableHead = { link = 'Normal' },
         RenderMarkdownChecked = { fg = colors.hue_4 },
         RenderMarkdownTodo = { fg = colors.hue_5 },
-        OpencodeWinSeparator = { fg = colors.syntax_cursor, bg = colors.panel },
 
         ---------------
         -- edgy.nvim --
